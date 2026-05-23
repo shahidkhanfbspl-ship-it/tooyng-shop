@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOOYNG SHOP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    .font-heading { font-family: 'Space Grotesk', sans-serif; }
+    .font-mono-tech { font-family: 'Share Tech Mono', monospace; }
+  </style>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+
+  <nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 flex justify-between items-center border-b border-white/5 backdrop-blur-sm bg-black/50">
+    <div class="flex flex-col">
+      <a href="#" class="font-heading text-2xl tracking-tighter uppercase font-bold">TOOYNG</a>
+      <span class="font-mono-tech text-[10px] text-neutral-400 tracking-widest mt-0.5">[ DROP_01 // SRT ]</span>
+    </div>
+    <div>
+      <a href="#" class="font-mono-tech text-sm border border-white/20 px-3 py-1 bg-white text-black rounded-none">
+        BAG (0)
+      </a>
+    </div>
+  </nav>
+
+  <section class="relative h-screen w-full flex items-end justify-start px-6 pb-16 md:px-12 md:pb-24 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <video autoplay loop muted playsinline class="w-full h-full object-cover opacity-60 filter grayscale contrast-125">
+        <source src="https://cdn.coverr.co/videos/coverr-dark-aesthetic-5244/1080p.mp4" type="video/mp4">
+      </video>
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl space-y-6">
+      <div class="space-y-2">
+        <span class="font-mono-tech text-xs text-red-600 uppercase tracking-[0.3em] block font-bold">// INITIAL LAUNCH</span>
+        <h1 class="font-heading text-4xl sm:text-6xl md:text-8xl font-bold tracking-tighter uppercase leading-[0.95]">
+          Art is how we <br> decorate space.
+        </h1>
+      </div>
+      <p class="text-neutral-400 text-sm max-w-md font-mono-tech">
+        Premium heavy-weight silhouettes engineered with raw custom graphics and drop-shoulder cuts. Crafted in Surat.
+      </p>
+      <div class="pt-2">
+        <a href="#" class="inline-flex items-center justify-center bg-white text-black px-8 py-4 font-heading font-bold uppercase tracking-wider text-sm transition-all duration-300 hover:bg-black hover:text-white border border-white rounded-none">
+          Shop The Drop →
+        </a>
+      </div>
+    </div>
+  </nav>
+
+</body>
+</html>
