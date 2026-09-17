@@ -33,7 +33,6 @@ export default {
       line-height: 1.6;
     }
 
-    /* HEADER */
     header {
       position: sticky;
       top: 0;
@@ -213,7 +212,7 @@ export default {
       font-weight: 400;
     }
 
-    /* CREATIONS: 4 PRODUCTS GRID */
+    /* THE CREATIONS GRID (4 PRODUCTS) */
     .creations-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -228,7 +227,6 @@ export default {
       overflow: hidden;
     }
 
-    /* SLIDER CONTAINER */
     .slider-container {
       position: relative;
       width: 100%;
@@ -251,7 +249,6 @@ export default {
       object-fit: cover;
     }
 
-    /* SLIDER ARROWS & BADGE */
     .slider-btn {
       position: absolute;
       top: 50%;
@@ -291,7 +288,6 @@ export default {
       backdrop-filter: blur(4px);
     }
 
-    /* CARD DETAILS */
     .card-content {
       padding: 26px;
       display: flex;
@@ -369,7 +365,7 @@ export default {
       opacity: 0.88;
     }
 
-    /* FOUNDERS (NO IMAGES, EDITORIAL TYPOGRAPHY) */
+    /* FOUNDERS */
     .founders-editorial {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -414,7 +410,7 @@ export default {
       font-weight: 300;
     }
 
-    /* FOOTER BANNER */
+    /* CONTACT BANNER */
     .contact-banner {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -500,7 +496,7 @@ export default {
     <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'd%20like%20to%20make%20a%20bespoke%20inquiry." target="_blank" class="nav-cta">Bespoke Inquiry</a>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO (UPDATED WITH 2ND IMAGE) -->
   <section class="hero">
     <div class="hero-content">
       <span class="hero-tag">Surat, India &mdash; Handcrafted Haute Couture</span>
@@ -514,11 +510,11 @@ export default {
       </div>
     </div>
     <div class="hero-image-wrap">
-      <img src="https://i.postimg.cc/900ztY84/Save-Inta-com-696260172-18107828236777366-171823889754563633-n.jpg" alt="TOOYNG Masterpiece" />
+      <img src="https://i.postimg.cc/2ytyHLMV/Save-Inta-com-698324810-18107825149777366-6743558860781962725-n.jpg" alt="Transformative Wearable Art" />
     </div>
   </section>
 
-  <!-- THE CREATIONS (4 PRODUCTS ONLY, SLIDING CAROUSEL) -->
+  <!-- THE CREATIONS (EXACTLY 4 CURATED PRODUCTS) -->
   <section id="creations">
     <div class="section-header">
       <span class="section-tag">Curated Archive</span>
@@ -527,17 +523,20 @@ export default {
 
     <div class="creations-grid">
 
-      <!-- PRODUCT 01 -->
+      <!-- PRODUCT 01: MONOGRAM SILHOUETTE -->
       <div class="creation-card">
         <div class="slider-container">
           <div class="slide-track" id="track-p1">
-            <img src="https://i.postimg.cc/900ztY84/Save-Inta-com-696260172-18107828236777366-171823889754563633-n.jpg" alt="Piece 01 View 1" />
-            <img src="https://i.postimg.cc/2ytyHLMV/Save-Inta-com-698324810-18107825149777366-6743558860781962725-n.jpg" alt="Piece 01 View 2" />
-            <img src="https://i.postimg.cc/Vvv5BWGs/Save-Inta-com-700739741-18107828245777366-4157103012936574095-n.jpg" alt="Piece 01 View 3" />
+            <img src="https://i.postimg.cc/ZnQnfv2L/Save-Inta-com-708993165-18110311522777366-482909009062222477-n.jpg" alt="Monogram View 1" />
+            <img src="https://i.postimg.cc/nrrMYGdN/Save-Inta-com-709005326-18110311495777366-6125675920120684866-n.jpg" alt="Monogram View 2" />
+            <img src="https://i.postimg.cc/x88qy3sW/Save-Inta-com-709921421-18110311486777366-6639307372825176493-n.jpg" alt="Monogram View 3" />
+            <img src="https://i.postimg.cc/Vvv5BW7x/Save-Inta-com-710226991-18110311510777366-8547035354425217381-n.jpg" alt="Monogram View 4" />
+            <img src="https://i.postimg.cc/hjpfd50N/Save-Inta-com-712207470-18110311477777366-8800223110826816673-n.jpg" alt="Monogram View 5" />
+            <img src="https://i.postimg.cc/7hRhBJd3/Save-Inta-com-712227891-18110311531777366-3291071189053129033-n.jpg" alt="Monogram View 6" />
           </div>
           <button class="slider-btn prev" onclick="moveSlide('p1', -1)">&#10094;</button>
           <button class="slider-btn next" onclick="moveSlide('p1', 1)">&#10095;</button>
-          <div class="slide-counter" id="counter-p1">1 / 3</div>
+          <div class="slide-counter" id="counter-p1">1 / 6</div>
         </div>
         <div class="card-content">
           <div>
@@ -545,33 +544,32 @@ export default {
               <span>Bespoke Edition</span>
               <span>Piece 01</span>
             </div>
-            <h3 class="card-title">Artisan Streetwear Ensemble</h3>
-            <p class="card-caption">Custom dyed silhouette, structured crop profile with tailored relaxed bottoms.</p>
+            <h3 class="card-title">Hand-Detailed Monogram Silhouette</h3>
+            <p class="card-caption">Layered raw textiles, custom artisanal branding, and multi-angle paneling.</p>
           </div>
           <div class="price-inquiry-box">
             <span class="inquiry-label">For Price DM on Insta / WhatsApp</span>
             <div class="inquiry-buttons">
-              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2001." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
+              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2001%20(Monogram%20Silhouette)." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
               <a href="https://instagram.com/tooyng.shop/" target="_blank" class="inquiry-btn insta">DM Insta</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- PRODUCT 02 -->
+      <!-- PRODUCT 02: ATELIER TAILORED CANVAS JACKET -->
       <div class="creation-card">
         <div class="slider-container">
           <div class="slide-track" id="track-p2">
-            <img src="https://i.postimg.cc/ZnQnfv2L/Save-Inta-com-708993165-18110311522777366-482909009062222477-n.jpg" alt="Piece 02 View 1" />
-            <img src="https://i.postimg.cc/nrrMYGdN/Save-Inta-com-709005326-18110311495777366-6125675920120684866-n.jpg" alt="Piece 02 View 2" />
-            <img src="https://i.postimg.cc/x88qy3sW/Save-Inta-com-709921421-18110311486777366-6639307372825176493-n.jpg" alt="Piece 02 View 3" />
-            <img src="https://i.postimg.cc/Vvv5BW7x/Save-Inta-com-710226991-18110311510777366-8547035354425217381-n.jpg" alt="Piece 02 View 4" />
-            <img src="https://i.postimg.cc/hjpfd50N/Save-Inta-com-712207470-18110311477777366-8800223110826816673-n.jpg" alt="Piece 02 View 5" />
-            <img src="https://i.postimg.cc/7hRhBJd3/Save-Inta-com-712227891-18110311531777366-3291071189053129033-n.jpg" alt="Piece 02 View 6" />
+            <img src="https://i.postimg.cc/fbQtnXyQ/Save-Inta-com-800538801-18126733585777366-8827391549615843940-n.jpg" alt="Atelier Canvas View 1" />
+            <img src="https://i.postimg.cc/mrWzfMkG/Save-Inta-com-800603551-18126733567777366-4981473501512892217-n.jpg" alt="Atelier Canvas View 2" />
+            <img src="https://i.postimg.cc/HL0Jpxcv/Save-Inta-com-800603552-18126733603777366-4382438410346774403-n.jpg" alt="Atelier Canvas View 3" />
+            <img src="https://i.postimg.cc/vmwgF9Bk/Save-Inta-com-800715042-18126733558777366-902083303958726911-n.jpg" alt="Atelier Canvas View 4" />
+            <img src="https://i.postimg.cc/pdQ92Th4/Save-Inta-com-800862044-18126733576777366-9014182363031779997-n.jpg" alt="Atelier Canvas View 5" />
           </div>
           <button class="slider-btn prev" onclick="moveSlide('p2', -1)">&#10094;</button>
           <button class="slider-btn next" onclick="moveSlide('p2', 1)">&#10095;</button>
-          <div class="slide-counter" id="counter-p2">1 / 6</div>
+          <div class="slide-counter" id="counter-p2">1 / 5</div>
         </div>
         <div class="card-content">
           <div>
@@ -579,32 +577,31 @@ export default {
               <span>Bespoke Edition</span>
               <span>Piece 02</span>
             </div>
-            <h3 class="card-title">Hand-Detailed Monogram Silhouette</h3>
-            <p class="card-caption">Layered raw textiles, custom artisanal branding, and multi-angle paneling.</p>
+            <h3 class="card-title">Atelier Tailored Canvas Jacket</h3>
+            <p class="card-caption">Hand-cut heavy fabric with bespoke embroidery accents and signature finish.</p>
           </div>
           <div class="price-inquiry-box">
             <span class="inquiry-label">For Price DM on Insta / WhatsApp</span>
             <div class="inquiry-buttons">
-              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2002." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
+              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2002%20(Atelier%20Canvas%20Jacket)." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
               <a href="https://instagram.com/tooyng.shop/" target="_blank" class="inquiry-btn insta">DM Insta</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- PRODUCT 03 -->
+      <!-- PRODUCT 03: SCULPTURAL LAYERED KIMONO -->
       <div class="creation-card">
         <div class="slider-container">
           <div class="slide-track" id="track-p3">
-            <img src="https://i.postimg.cc/fbQtnXyQ/Save-Inta-com-800538801-18126733585777366-8827391549615843940-n.jpg" alt="Piece 03 View 1" />
-            <img src="https://i.postimg.cc/mrWzfMkG/Save-Inta-com-800603551-18126733567777366-4981473501512892217-n.jpg" alt="Piece 03 View 2" />
-            <img src="https://i.postimg.cc/HL0Jpxcv/Save-Inta-com-800603552-18126733603777366-4382438410346774403-n.jpg" alt="Piece 03 View 3" />
-            <img src="https://i.postimg.cc/vmwgF9Bk/Save-Inta-com-800715042-18126733558777366-902083303958726911-n.jpg" alt="Piece 03 View 4" />
-            <img src="https://i.postimg.cc/pdQ92Th4/Save-Inta-com-800862044-18126733576777366-9014182363031779997-n.jpg" alt="Piece 03 View 5" />
+            <img src="https://i.postimg.cc/L5W5ygw5/Save-Inta-com-809209764-18127622860777366-5819116562713908464-n.jpg" alt="Kimono View 1" />
+            <img src="https://i.postimg.cc/1XdXWV2t/Save-Inta-com-809409724-18127622749777366-2043724227551422012-n.jpg" alt="Kimono View 2" />
+            <img src="https://i.postimg.cc/KYhkSLjS/Save-Inta-com-809939945-18127622818777366-4088908225769598992-n.jpg" alt="Kimono View 3" />
+            <img src="https://i.postimg.cc/J00tc56B/Save-Inta-com-810485651-18127622758777366-6505205483590295971-n.jpg" alt="Kimono View 4" />
           </div>
           <button class="slider-btn prev" onclick="moveSlide('p3', -1)">&#10094;</button>
           <button class="slider-btn next" onclick="moveSlide('p3', 1)">&#10095;</button>
-          <div class="slide-counter" id="counter-p3">1 / 5</div>
+          <div class="slide-counter" id="counter-p3">1 / 4</div>
         </div>
         <div class="card-content">
           <div>
@@ -612,35 +609,31 @@ export default {
               <span>Bespoke Edition</span>
               <span>Piece 03</span>
             </div>
-            <h3 class="card-title">Atelier Tailored Canvas Jacket</h3>
-            <p class="card-caption">Hand-cut heavy fabric with bespoke embroidery accents and signature finish.</p>
+            <h3 class="card-title">Sculptural Layered Kimono</h3>
+            <p class="card-caption">Signature Japanese kimono silhouette reimagined with heavy streetwear draping.</p>
           </div>
           <div class="price-inquiry-box">
             <span class="inquiry-label">For Price DM on Insta / WhatsApp</span>
             <div class="inquiry-buttons">
-              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2003." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
+              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2003%20(Sculptural%20Kimono)." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
               <a href="https://instagram.com/tooyng.shop/" target="_blank" class="inquiry-btn insta">DM Insta</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- PRODUCT 04 -->
+      <!-- PRODUCT 04: SIGNATURE ARTISANAL DRAPED SILHOUETTE -->
       <div class="creation-card">
         <div class="slider-container">
           <div class="slide-track" id="track-p4">
-            <img src="https://i.postimg.cc/L5W5ygw5/Save-Inta-com-809209764-18127622860777366-5819116562713908464-n.jpg" alt="Piece 04 View 1" />
-            <img src="https://i.postimg.cc/1XdXWV2t/Save-Inta-com-809409724-18127622749777366-2043724227551422012-n.jpg" alt="Piece 04 View 2" />
-            <img src="https://i.postimg.cc/s2PBVXQb/Save-Inta-com-809844546-18127626013777366-8788243642535572350-n.jpg" alt="Piece 04 View 3" />
-            <img src="https://i.postimg.cc/KYhkSLjS/Save-Inta-com-809939945-18127622818777366-4088908225769598992-n.jpg" alt="Piece 04 View 4" />
-            <img src="https://i.postimg.cc/cJ7KsHty/Save-Inta-com-810051819-18127626004777366-7474619658573873979-n.jpg" alt="Piece 04 View 5" />
-            <img src="https://i.postimg.cc/7L1Cx6Gp/Save-Inta-com-810246512-18127625995777366-1835888277462029942-n.jpg" alt="Piece 04 View 6" />
-            <img src="https://i.postimg.cc/J00tc56B/Save-Inta-com-810485651-18127622758777366-6505205483590295971-n.jpg" alt="Piece 04 View 7" />
-            <img src="https://i.postimg.cc/fb73wLS4/Save-Inta-com-810623442-18127625992777366-5157783398909784225-n.jpg" alt="Piece 04 View 8" />
+            <img src="https://i.postimg.cc/s2PBVXQb/Save-Inta-com-809844546-18127626013777366-8788243642535572350-n.jpg" alt="Draped View 1" />
+            <img src="https://i.postimg.cc/cJ7KsHty/Save-Inta-com-810051819-18127626004777366-7474619658573873979-n.jpg" alt="Draped View 2" />
+            <img src="https://i.postimg.cc/7L1Cx6Gp/Save-Inta-com-810246512-18127625995777366-1835888277462029942-n.jpg" alt="Draped View 3" />
+            <img src="https://i.postimg.cc/fb73wLS4/Save-Inta-com-810623442-18127625992777366-5157783398909784225-n.jpg" alt="Draped View 4" />
           </div>
           <button class="slider-btn prev" onclick="moveSlide('p4', -1)">&#10094;</button>
           <button class="slider-btn next" onclick="moveSlide('p4', 1)">&#10095;</button>
-          <div class="slide-counter" id="counter-p4">1 / 8</div>
+          <div class="slide-counter" id="counter-p4">1 / 4</div>
         </div>
         <div class="card-content">
           <div>
@@ -648,13 +641,13 @@ export default {
               <span>Bespoke Edition</span>
               <span>Piece 04</span>
             </div>
-            <h3 class="card-title">Sculptural Layered Kimono</h3>
-            <p class="card-caption">Artisan heavy draping, complete with detailed finishing cuts and bespoke tailoring.</p>
+            <h3 class="card-title">Signature Artisanal Draped Silhouette</h3>
+            <p class="card-caption">Raw cut structured flow with handcrafted detailing and tailored bespoke seams.</p>
           </div>
           <div class="price-inquiry-box">
             <span class="inquiry-label">For Price DM on Insta / WhatsApp</span>
             <div class="inquiry-buttons">
-              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2004." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
+              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2004%20(Draped%20Silhouette)." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
               <a href="https://instagram.com/tooyng.shop/" target="_blank" class="inquiry-btn insta">DM Insta</a>
             </div>
           </div>
@@ -664,7 +657,7 @@ export default {
     </div>
   </section>
 
-  <!-- THE FOUNDERS (NO IMAGES, EDITORIAL TEXT DESIGN) -->
+  <!-- THE FOUNDERS -->
   <section id="founders">
     <div class="section-header">
       <span class="section-tag">Visionaries</span>
@@ -707,10 +700,10 @@ export default {
 
   <script>
     const sliders = {
-      p1: { index: 0, total: 3 },
-      p2: { index: 0, total: 6 },
-      p3: { index: 0, total: 5 },
-      p4: { index: 0, total: 8 }
+      p1: { index: 0, total: 6 },
+      p2: { index: 0, total: 5 },
+      p3: { index: 0, total: 4 },
+      p4: { index: 0, total: 4 }
     };
 
     function moveSlide(id, step) {
