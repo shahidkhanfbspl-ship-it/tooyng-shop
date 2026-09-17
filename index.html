@@ -16,7 +16,6 @@ export default {
       --border: rgba(255, 255, 255, 0.1);
       --text-main: #f4f4f5;
       --text-muted: #a1a1aa;
-      --accent: #ffffff;
       --gold: #d4af37;
     }
 
@@ -34,13 +33,13 @@ export default {
       line-height: 1.6;
     }
 
-    /* HEADER / NAVBAR */
+    /* HEADER */
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(9, 9, 11, 0.85);
-      backdrop-filter: blur(12px);
+      background: rgba(9, 9, 11, 0.9);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
@@ -50,9 +49,9 @@ export default {
 
     .brand-logo {
       font-family: 'Cinzel', serif;
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       font-weight: 700;
-      letter-spacing: 0.25em;
+      letter-spacing: 0.22em;
       color: var(--text-main);
       text-decoration: none;
       display: flex;
@@ -75,7 +74,7 @@ export default {
     nav a {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       transition: color 0.2s ease;
@@ -86,12 +85,12 @@ export default {
     }
 
     .nav-cta {
-      padding: 8px 18px;
+      padding: 9px 20px;
       border: 1px solid var(--border);
       color: var(--text-main);
       text-decoration: none;
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       transition: all 0.3s ease;
     }
@@ -101,7 +100,7 @@ export default {
       color: #000000;
     }
 
-    /* HERO SECTION */
+    /* HERO */
     .hero {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -117,7 +116,7 @@ export default {
     }
 
     .hero-tag {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--gold);
@@ -127,11 +126,11 @@ export default {
 
     .hero-title {
       font-family: 'Cinzel', serif;
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-size: clamp(2.4rem, 4.8vw, 4.2rem);
       font-weight: 400;
-      line-height: 1.1;
+      line-height: 1.12;
       margin-bottom: 24px;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.03em;
     }
 
     .hero-title em {
@@ -141,7 +140,7 @@ export default {
     }
 
     .hero-desc {
-      font-size: 1.05rem;
+      font-size: 1.02rem;
       color: var(--text-muted);
       max-width: 520px;
       margin-bottom: 36px;
@@ -157,81 +156,68 @@ export default {
     .btn-solid {
       background: #ffffff;
       color: #000000;
-      padding: 14px 28px;
-      font-size: 0.8rem;
+      padding: 13px 26px;
+      font-size: 0.78rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       font-weight: 600;
       text-decoration: none;
-      transition: opacity 0.2s;
-    }
-
-    .btn-solid:hover {
-      opacity: 0.88;
     }
 
     .btn-outline {
       border: 1px solid var(--border);
       color: #ffffff;
-      padding: 14px 28px;
-      font-size: 0.8rem;
+      padding: 13px 26px;
+      font-size: 0.78rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       text-decoration: none;
-      transition: background 0.2s;
-    }
-
-    .btn-outline:hover {
-      background: rgba(255, 255, 255, 0.05);
     }
 
     .hero-image-wrap {
       width: 100%;
-      height: 80vh;
+      height: 75vh;
       overflow: hidden;
-      position: relative;
+      border: 1px solid var(--border);
     }
 
     .hero-image-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
-      filter: contrast(1.05);
     }
 
-    /* SECTION SHARED */
+    /* SECTIONS */
     section {
-      padding: 100px 5%;
+      padding: 90px 5%;
       border-bottom: 1px solid var(--border);
     }
 
     .section-header {
-      margin-bottom: 60px;
+      margin-bottom: 50px;
       max-width: 600px;
     }
 
     .section-tag {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--gold);
       display: block;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .section-title {
       font-family: 'Cinzel', serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      letter-spacing: 0.04em;
+      font-size: clamp(2rem, 3.2vw, 2.8rem);
       font-weight: 400;
     }
 
-    /* THE CREATIONS GRID */
+    /* CREATIONS: 4 PRODUCTS GRID */
     .creations-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 32px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
     }
 
     .creation-card {
@@ -240,61 +226,106 @@ export default {
       display: flex;
       flex-direction: column;
       overflow: hidden;
-      transition: transform 0.3s ease, border-color 0.3s ease;
     }
 
-    .creation-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255, 255, 255, 0.25);
-    }
-
-    .card-img-wrap {
+    /* SLIDER CONTAINER */
+    .slider-container {
+      position: relative;
       width: 100%;
-      height: 380px;
+      height: 480px;
       overflow: hidden;
       background: #000;
     }
 
-    .card-img-wrap img {
+    .slide-track {
+      display: flex;
       width: 100%;
       height: 100%;
+      transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .slide-track img {
+      width: 100%;
+      height: 100%;
+      flex-shrink: 0;
       object-fit: cover;
-      transition: transform 0.6s ease;
     }
 
-    .creation-card:hover .card-img-wrap img {
-      transform: scale(1.05);
+    /* SLIDER ARROWS & BADGE */
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(9, 9, 11, 0.75);
+      color: #fff;
+      border: 1px solid var(--border);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+      z-index: 10;
+      backdrop-filter: blur(4px);
+      transition: background 0.2s;
     }
 
+    .slider-btn:hover {
+      background: #000;
+    }
+
+    .slider-btn.prev { left: 12px; }
+    .slider-btn.next { right: 12px; }
+
+    .slide-counter {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.75);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: #fff;
+      backdrop-filter: blur(4px);
+    }
+
+    /* CARD DETAILS */
     .card-content {
-      padding: 24px;
+      padding: 26px;
       display: flex;
       flex-direction: column;
-      flex-grow: 1;
       justify-content: space-between;
+      flex-grow: 1;
     }
 
     .card-meta {
       display: flex;
       justify-content: space-between;
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       letter-spacing: 0.15em;
       color: var(--text-muted);
       text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .card-title {
       font-family: 'Cinzel', serif;
-      font-size: 1.15rem;
-      margin-bottom: 8px;
-      letter-spacing: 0.02em;
+      font-size: 1.35rem;
+      margin-bottom: 6px;
+    }
+
+    .card-caption {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+      font-weight: 300;
     }
 
     .price-inquiry-box {
-      margin-top: 20px;
-      padding-top: 16px;
       border-top: 1px solid var(--border);
+      padding-top: 18px;
     }
 
     .inquiry-label {
@@ -302,26 +333,25 @@ export default {
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       display: block;
     }
 
     .inquiry-buttons {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
+      gap: 10px;
     }
 
     .inquiry-btn {
       text-align: center;
-      padding: 9px 0;
-      font-size: 0.7rem;
-      letter-spacing: 0.08em;
+      padding: 10px 0;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
       text-decoration: none;
       text-transform: uppercase;
-      border-radius: 2px;
-      font-weight: 500;
-      transition: all 0.2s ease;
+      font-weight: 600;
+      transition: opacity 0.2s;
     }
 
     .inquiry-btn.whatsapp {
@@ -329,208 +359,127 @@ export default {
       color: #000;
     }
 
-    .inquiry-btn.whatsapp:hover {
-      background: #20bd5a;
-    }
-
     .inquiry-btn.insta {
       background: transparent;
       border: 1px solid var(--border);
-      color: var(--text-main);
+      color: #fff;
     }
 
-    .inquiry-btn.insta:hover {
-      background: rgba(255, 255, 255, 0.1);
+    .inquiry-btn:hover {
+      opacity: 0.88;
     }
 
-    /* ATELIER & STUDIO SECTION */
-    .studio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 20px;
-    }
-
-    .studio-item {
-      height: 280px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-
-    .studio-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(20%);
-      transition: filter 0.4s ease, transform 0.4s ease;
-    }
-
-    .studio-item:hover img {
-      filter: grayscale(0%);
-      transform: scale(1.03);
-    }
-
-    /* FOUNDERS SECTION */
-    .founders-grid {
+    /* FOUNDERS (NO IMAGES, EDITORIAL TYPOGRAPHY) */
+    .founders-editorial {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      max-width: 1000px;
+      gap: 30px;
     }
 
-    .founder-card {
+    .founder-box {
       border: 1px solid var(--border);
       background: var(--card-bg);
-      overflow: hidden;
+      padding: 40px;
+      position: relative;
     }
 
-    .founder-img-wrap {
-      width: 100%;
-      height: 480px;
-      overflow: hidden;
-    }
-
-    .founder-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .founder-info {
-      padding: 24px;
+    .founder-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
     }
 
     .founder-role {
       font-size: 0.75rem;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       display: block;
     }
 
     .founder-name {
       font-family: 'Cinzel', serif;
-      font-size: 1.4rem;
-      letter-spacing: 0.05em;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
     }
 
-    /* EDITORIAL LOOKBOOK SECTION */
-    .lookbook-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 16px;
+    .founder-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      font-weight: 300;
     }
 
-    .lookbook-item {
-      height: 380px;
-      overflow: hidden;
+    /* FOOTER BANNER */
+    .contact-banner {
+      background: var(--card-bg);
       border: 1px solid var(--border);
-    }
-
-    .lookbook-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .lookbook-item:hover img {
-      transform: scale(1.06);
-    }
-
-    /* DIRECT CONTACT BANNER */
-    .inquiry-banner {
-      background: #121215;
-      border: 1px solid var(--border);
-      padding: 60px 40px;
+      padding: 60px 30px;
       text-align: center;
       margin-top: 40px;
     }
 
-    .inquiry-banner h3 {
+    .contact-banner h3 {
       font-family: 'Cinzel', serif;
       font-size: 2rem;
       margin-bottom: 12px;
     }
 
-    .inquiry-banner p {
+    .contact-banner p {
       color: var(--text-muted);
-      margin-bottom: 28px;
+      margin-bottom: 26px;
       font-size: 0.95rem;
     }
 
-    .contact-links {
+    .banner-links {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 16px;
       flex-wrap: wrap;
     }
 
-    .contact-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
+    .contact-pill {
       padding: 12px 24px;
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       border: 1px solid var(--border);
       color: #fff;
-      transition: all 0.2s ease;
     }
 
-    .contact-badge.wa-badge {
+    .contact-pill.wa-pill {
       background: #25D366;
       color: #000;
       font-weight: 600;
       border-color: #25D366;
     }
 
-    .contact-badge:hover {
-      opacity: 0.9;
-    }
-
-    /* FOOTER */
     footer {
-      padding: 40px 5%;
+      padding: 36px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       color: var(--text-muted);
-      letter-spacing: 0.08em;
+      border-top: 1px solid var(--border);
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 16px;
     }
 
-    footer a {
-      color: var(--text-muted);
-      text-decoration: none;
-    }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: #fff; }
 
-    footer a:hover {
-      color: #fff;
-    }
-
-    /* MOBILE RESPONSIVENESS */
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 40px;
-      }
-      .hero-image-wrap {
-        height: 50vh;
-      }
-      .founders-grid {
-        grid-template-columns: 1fr;
-      }
-      .lookbook-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      nav ul {
-        display: none;
-      }
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-image-wrap { height: 50vh; }
+      .creations-grid { grid-template-columns: 1fr; }
+      .founders-editorial { grid-template-columns: 1fr; }
+      nav ul { display: none; }
     }
   </style>
 </head>
@@ -544,44 +493,51 @@ export default {
     <nav>
       <ul>
         <li><a href="#creations">Creations</a></li>
-        <li><a href="#studio">Atelier</a></li>
         <li><a href="#founders">Founders</a></li>
-        <li><a href="#lookbook">Lookbook</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'd%20like%20to%20make%20a%20bespoke%20inquiry." target="_blank" class="nav-cta">Bespoke Inquiry</a>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero" id="hero">
+  <!-- HERO -->
+  <section class="hero">
     <div class="hero-content">
       <span class="hero-tag">Surat, India &mdash; Handcrafted Haute Couture</span>
       <h1 class="hero-title">Transformative <em>Wearable Art</em></h1>
       <p class="hero-desc">
-        We exist in the unhurried space between fine art and slow fashion. Every garment is treated as an individual canvas—hand-cut, tailored, and meticulously crafted for those who refuse monotony.
+        We exist in the unhurried space between fine art and slow fashion. Every garment is treated as an individual canvas—hand-cut, tailored, and meticulously crafted.
       </p>
       <div class="hero-actions">
-        <a href="#creations" class="btn-solid">Explore Creations</a>
+        <a href="#creations" class="btn-solid">Explore 4 Pieces</a>
         <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20interested%20in%20discussing%20a%20custom%20piece." target="_blank" class="btn-outline">WhatsApp Atelier</a>
       </div>
     </div>
     <div class="hero-image-wrap">
-      <img src="https://i.postimg.cc/900ztY84/Save-Inta-com-696260172-18107828236777366-171823889754563633-n.jpg" alt="TOOYNG Hero Wearable Art" loading="eager" />
+      <img src="https://i.postimg.cc/900ztY84/Save-Inta-com-696260172-18107828236777366-171823889754563633-n.jpg" alt="TOOYNG Masterpiece" />
     </div>
   </section>
 
-  <!-- THE CREATIONS (PRODUCTS) -->
+  <!-- THE CREATIONS (4 PRODUCTS ONLY, SLIDING CAROUSEL) -->
   <section id="creations">
     <div class="section-header">
-      <span class="section-tag">Archive 01</span>
+      <span class="section-tag">Curated Archive</span>
       <h2 class="section-title">The Creations</h2>
     </div>
 
     <div class="creations-grid">
-      <!-- 01 -->
+
+      <!-- PRODUCT 01 -->
       <div class="creation-card">
-        <div class="card-img-wrap">
-          <img src="https://i.postimg.cc/2ytyHLMV/Save-Inta-com-698324810-18107825149777366-6743558860781962725-n.jpg" alt="Creation 01" loading="lazy" />
+        <div class="slider-container">
+          <div class="slide-track" id="track-p1">
+            <img src="https://i.postimg.cc/900ztY84/Save-Inta-com-696260172-18107828236777366-171823889754563633-n.jpg" alt="Piece 01 View 1" />
+            <img src="https://i.postimg.cc/2ytyHLMV/Save-Inta-com-698324810-18107825149777366-6743558860781962725-n.jpg" alt="Piece 01 View 2" />
+            <img src="https://i.postimg.cc/Vvv5BWGs/Save-Inta-com-700739741-18107828245777366-4157103012936574095-n.jpg" alt="Piece 01 View 3" />
+          </div>
+          <button class="slider-btn prev" onclick="moveSlide('p1', -1)">&#10094;</button>
+          <button class="slider-btn next" onclick="moveSlide('p1', 1)">&#10095;</button>
+          <div class="slide-counter" id="counter-p1">1 / 3</div>
         </div>
         <div class="card-content">
           <div>
@@ -589,22 +545,33 @@ export default {
               <span>Bespoke Edition</span>
               <span>Piece 01</span>
             </div>
-            <h3 class="card-title">Artisan Structured Silhouette</h3>
+            <h3 class="card-title">Artisan Streetwear Ensemble</h3>
+            <p class="card-caption">Custom dyed silhouette, structured crop profile with tailored relaxed bottoms.</p>
           </div>
           <div class="price-inquiry-box">
-            <span class="inquiry-label">For Price & Orders</span>
+            <span class="inquiry-label">For Price DM on Insta / WhatsApp</span>
             <div class="inquiry-buttons">
-              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2001%20(Artisan%20Structured%20Silhouette)." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
+              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2001." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
               <a href="https://instagram.com/tooyng.shop/" target="_blank" class="inquiry-btn insta">DM Insta</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 02 -->
+      <!-- PRODUCT 02 -->
       <div class="creation-card">
-        <div class="card-img-wrap">
-          <img src="https://i.postimg.cc/Vvv5BWGs/Save-Inta-com-700739741-18107828245777366-4157103012936574095-n.jpg" alt="Creation 02" loading="lazy" />
+        <div class="slider-container">
+          <div class="slide-track" id="track-p2">
+            <img src="https://i.postimg.cc/ZnQnfv2L/Save-Inta-com-708993165-18110311522777366-482909009062222477-n.jpg" alt="Piece 02 View 1" />
+            <img src="https://i.postimg.cc/nrrMYGdN/Save-Inta-com-709005326-18110311495777366-6125675920120684866-n.jpg" alt="Piece 02 View 2" />
+            <img src="https://i.postimg.cc/x88qy3sW/Save-Inta-com-709921421-18110311486777366-6639307372825176493-n.jpg" alt="Piece 02 View 3" />
+            <img src="https://i.postimg.cc/Vvv5BW7x/Save-Inta-com-710226991-18110311510777366-8547035354425217381-n.jpg" alt="Piece 02 View 4" />
+            <img src="https://i.postimg.cc/hjpfd50N/Save-Inta-com-712207470-18110311477777366-8800223110826816673-n.jpg" alt="Piece 02 View 5" />
+            <img src="https://i.postimg.cc/7hRhBJd3/Save-Inta-com-712227891-18110311531777366-3291071189053129033-n.jpg" alt="Piece 02 View 6" />
+          </div>
+          <button class="slider-btn prev" onclick="moveSlide('p2', -1)">&#10094;</button>
+          <button class="slider-btn next" onclick="moveSlide('p2', 1)">&#10095;</button>
+          <div class="slide-counter" id="counter-p2">1 / 6</div>
         </div>
         <div class="card-content">
           <div>
@@ -612,22 +579,32 @@ export default {
               <span>Bespoke Edition</span>
               <span>Piece 02</span>
             </div>
-            <h3 class="card-title">Hand-Painted Oversized Canvas</h3>
+            <h3 class="card-title">Hand-Detailed Monogram Silhouette</h3>
+            <p class="card-caption">Layered raw textiles, custom artisanal branding, and multi-angle paneling.</p>
           </div>
           <div class="price-inquiry-box">
-            <span class="inquiry-label">For Price & Orders</span>
+            <span class="inquiry-label">For Price DM on Insta / WhatsApp</span>
             <div class="inquiry-buttons">
-              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2002%20(Hand-Painted%20Oversized%20Canvas)." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
+              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2002." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
               <a href="https://instagram.com/tooyng.shop/" target="_blank" class="inquiry-btn insta">DM Insta</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 03 -->
+      <!-- PRODUCT 03 -->
       <div class="creation-card">
-        <div class="card-img-wrap">
-          <img src="https://i.postimg.cc/ZnQnfv2L/Save-Inta-com-708993165-18110311522777366-482909009062222477-n.jpg" alt="Creation 03" loading="lazy" />
+        <div class="slider-container">
+          <div class="slide-track" id="track-p3">
+            <img src="https://i.postimg.cc/fbQtnXyQ/Save-Inta-com-800538801-18126733585777366-8827391549615843940-n.jpg" alt="Piece 03 View 1" />
+            <img src="https://i.postimg.cc/mrWzfMkG/Save-Inta-com-800603551-18126733567777366-4981473501512892217-n.jpg" alt="Piece 03 View 2" />
+            <img src="https://i.postimg.cc/HL0Jpxcv/Save-Inta-com-800603552-18126733603777366-4382438410346774403-n.jpg" alt="Piece 03 View 3" />
+            <img src="https://i.postimg.cc/vmwgF9Bk/Save-Inta-com-800715042-18126733558777366-902083303958726911-n.jpg" alt="Piece 03 View 4" />
+            <img src="https://i.postimg.cc/pdQ92Th4/Save-Inta-com-800862044-18126733576777366-9014182363031779997-n.jpg" alt="Piece 03 View 5" />
+          </div>
+          <button class="slider-btn prev" onclick="moveSlide('p3', -1)">&#10094;</button>
+          <button class="slider-btn next" onclick="moveSlide('p3', 1)">&#10095;</button>
+          <div class="slide-counter" id="counter-p3">1 / 5</div>
         </div>
         <div class="card-content">
           <div>
@@ -635,22 +612,35 @@ export default {
               <span>Bespoke Edition</span>
               <span>Piece 03</span>
             </div>
-            <h3 class="card-title">Bespoke Monogram Silhouette</h3>
+            <h3 class="card-title">Atelier Tailored Canvas Jacket</h3>
+            <p class="card-caption">Hand-cut heavy fabric with bespoke embroidery accents and signature finish.</p>
           </div>
           <div class="price-inquiry-box">
-            <span class="inquiry-label">For Price & Orders</span>
+            <span class="inquiry-label">For Price DM on Insta / WhatsApp</span>
             <div class="inquiry-buttons">
-              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2003%20(Bespoke%20Monogram%20Silhouette)." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
+              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2003." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
               <a href="https://instagram.com/tooyng.shop/" target="_blank" class="inquiry-btn insta">DM Insta</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 04 -->
+      <!-- PRODUCT 04 -->
       <div class="creation-card">
-        <div class="card-img-wrap">
-          <img src="https://i.postimg.cc/nrrMYGdN/Save-Inta-com-709005326-18110311495777366-6125675920120684866-n.jpg" alt="Creation 04" loading="lazy" />
+        <div class="slider-container">
+          <div class="slide-track" id="track-p4">
+            <img src="https://i.postimg.cc/L5W5ygw5/Save-Inta-com-809209764-18127622860777366-5819116562713908464-n.jpg" alt="Piece 04 View 1" />
+            <img src="https://i.postimg.cc/1XdXWV2t/Save-Inta-com-809409724-18127622749777366-2043724227551422012-n.jpg" alt="Piece 04 View 2" />
+            <img src="https://i.postimg.cc/s2PBVXQb/Save-Inta-com-809844546-18127626013777366-8788243642535572350-n.jpg" alt="Piece 04 View 3" />
+            <img src="https://i.postimg.cc/KYhkSLjS/Save-Inta-com-809939945-18127622818777366-4088908225769598992-n.jpg" alt="Piece 04 View 4" />
+            <img src="https://i.postimg.cc/cJ7KsHty/Save-Inta-com-810051819-18127626004777366-7474619658573873979-n.jpg" alt="Piece 04 View 5" />
+            <img src="https://i.postimg.cc/7L1Cx6Gp/Save-Inta-com-810246512-18127625995777366-1835888277462029942-n.jpg" alt="Piece 04 View 6" />
+            <img src="https://i.postimg.cc/J00tc56B/Save-Inta-com-810485651-18127622758777366-6505205483590295971-n.jpg" alt="Piece 04 View 7" />
+            <img src="https://i.postimg.cc/fb73wLS4/Save-Inta-com-810623442-18127625992777366-5157783398909784225-n.jpg" alt="Piece 04 View 8" />
+          </div>
+          <button class="slider-btn prev" onclick="moveSlide('p4', -1)">&#10094;</button>
+          <button class="slider-btn next" onclick="moveSlide('p4', 1)">&#10095;</button>
+          <div class="slide-counter" id="counter-p4">1 / 8</div>
         </div>
         <div class="card-content">
           <div>
@@ -658,189 +648,79 @@ export default {
               <span>Bespoke Edition</span>
               <span>Piece 04</span>
             </div>
-            <h3 class="card-title">Raw Edge Layered Ensemble</h3>
+            <h3 class="card-title">Sculptural Layered Kimono</h3>
+            <p class="card-caption">Artisan heavy draping, complete with detailed finishing cuts and bespoke tailoring.</p>
           </div>
           <div class="price-inquiry-box">
-            <span class="inquiry-label">For Price & Orders</span>
+            <span class="inquiry-label">For Price DM on Insta / WhatsApp</span>
             <div class="inquiry-buttons">
-              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2004%20(Raw%20Edge%20Layered%20Ensemble)." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
+              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2004." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
               <a href="https://instagram.com/tooyng.shop/" target="_blank" class="inquiry-btn insta">DM Insta</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 05 -->
-      <div class="creation-card">
-        <div class="card-img-wrap">
-          <img src="https://i.postimg.cc/x88qy3sW/Save-Inta-com-709921421-18110311486777366-6639307372825176493-n.jpg" alt="Creation 05" loading="lazy" />
-        </div>
-        <div class="card-content">
-          <div>
-            <div class="card-meta">
-              <span>Bespoke Edition</span>
-              <span>Piece 05</span>
-            </div>
-            <h3 class="card-title">Textured Tailored Trouser</h3>
-          </div>
-          <div class="price-inquiry-box">
-            <span class="inquiry-label">For Price & Orders</span>
-            <div class="inquiry-buttons">
-              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2005%20(Textured%20Tailored%20Trouser)." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
-              <a href="https://instagram.com/tooyng.shop/" target="_blank" class="inquiry-btn insta">DM Insta</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 06 -->
-      <div class="creation-card">
-        <div class="card-img-wrap">
-          <img src="https://i.postimg.cc/Vvv5BW7x/Save-Inta-com-710226991-18110311510777366-8547035354425217381-n.jpg" alt="Creation 06" loading="lazy" />
-        </div>
-        <div class="card-content">
-          <div>
-            <div class="card-meta">
-              <span>Bespoke Edition</span>
-              <span>Piece 06</span>
-            </div>
-            <h3 class="card-title">Hand-Distressed Denim Coat</h3>
-          </div>
-          <div class="price-inquiry-box">
-            <span class="inquiry-label">For Price & Orders</span>
-            <div class="inquiry-buttons">
-              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2006%20(Hand-Distressed%20Denim%20Coat)." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
-              <a href="https://instagram.com/tooyng.shop/" target="_blank" class="inquiry-btn insta">DM Insta</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 07 -->
-      <div class="creation-card">
-        <div class="card-img-wrap">
-          <img src="https://i.postimg.cc/hjpfd50N/Save-Inta-com-712207470-18110311477777366-8800223110826816673-n.jpg" alt="Creation 07" loading="lazy" />
-        </div>
-        <div class="card-content">
-          <div>
-            <div class="card-meta">
-              <span>Bespoke Edition</span>
-              <span>Piece 07</span>
-            </div>
-            <h3 class="card-title">Studio Signature Hoodie</h3>
-          </div>
-          <div class="price-inquiry-box">
-            <span class="inquiry-label">For Price & Orders</span>
-            <div class="inquiry-buttons">
-              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2007%20(Studio%20Signature%20Hoodie)." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
-              <a href="https://instagram.com/tooyng.shop/" target="_blank" class="inquiry-btn insta">DM Insta</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 08 -->
-      <div class="creation-card">
-        <div class="card-img-wrap">
-          <img src="https://i.postimg.cc/7hRhBJd3/Save-Inta-com-712227891-18110311531777366-3291071189053129033-n.jpg" alt="Creation 08" loading="lazy" />
-        </div>
-        <div class="card-content">
-          <div>
-            <div class="card-meta">
-              <span>Bespoke Edition</span>
-              <span>Piece 08</span>
-            </div>
-            <h3 class="card-title">Sculptural Evening Kimono</h3>
-          </div>
-          <div class="price-inquiry-box">
-            <span class="inquiry-label">For Price & Orders</span>
-            <div class="inquiry-buttons">
-              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2008%20(Sculptural%20Evening%20Kimono)." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
-              <a href="https://instagram.com/tooyng.shop/" target="_blank" class="inquiry-btn insta">DM Insta</a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- ATELIER PROCESS -->
-  <section id="studio">
-    <div class="section-header">
-      <span class="section-tag">Craftsmanship</span>
-      <h2 class="section-title">In The Studio</h2>
-    </div>
-    <div class="studio-grid">
-      <div class="studio-item"><img src="https://i.postimg.cc/fbQtnXyQ/Save-Inta-com-800538801-18126733585777366-8827391549615843940-n.jpg" alt="Process 1" loading="lazy" /></div>
-      <div class="studio-item"><img src="https://i.postimg.cc/mrWzfMkG/Save-Inta-com-800603551-18126733567777366-4981473501512892217-n.jpg" alt="Process 2" loading="lazy" /></div>
-      <div class="studio-item"><img src="https://i.postimg.cc/HL0Jpxcv/Save-Inta-com-800603552-18126733603777366-4382438410346774403-n.jpg" alt="Process 3" loading="lazy" /></div>
-      <div class="studio-item"><img src="https://i.postimg.cc/vmwgF9Bk/Save-Inta-com-800715042-18126733558777366-902083303958726911-n.jpg" alt="Process 4" loading="lazy" /></div>
-      <div class="studio-item"><img src="https://i.postimg.cc/pdQ92Th4/Save-Inta-com-800862044-18126733576777366-9014182363031779997-n.jpg" alt="Process 5" loading="lazy" /></div>
-      <div class="studio-item"><img src="https://i.postimg.cc/L5W5ygw5/Save-Inta-com-809209764-18127622860777366-5819116562713908464-n.jpg" alt="Process 6" loading="lazy" /></div>
-    </div>
-  </section>
-
-  <!-- FOUNDERS -->
+  <!-- THE FOUNDERS (NO IMAGES, EDITORIAL TEXT DESIGN) -->
   <section id="founders">
     <div class="section-header">
       <span class="section-tag">Visionaries</span>
       <h2 class="section-title">The Founders</h2>
     </div>
-    <div class="founders-grid">
-      <div class="founder-card">
-        <div class="founder-img-wrap">
-          <img src="https://i.postimg.cc/1XdXWV2t/Save-Inta-com-809409724-18127622749777366-2043724227551422012-n.jpg" alt="Tariq Ilyas" loading="lazy" />
-        </div>
-        <div class="founder-info">
-          <span class="founder-role">Creative Director</span>
-          <h3 class="founder-name">Tariq Ilyas</h3>
-        </div>
+    <div class="founders-editorial">
+      <div class="founder-box">
+        <span class="founder-role">Creative Director</span>
+        <h3 class="founder-name">Tariq Ilyas</h3>
+        <p class="founder-desc">Driving the artistic vision, hand-painted aesthetic, and garment philosophy behind each bespoke silhouette.</p>
       </div>
-      <div class="founder-card">
-        <div class="founder-img-wrap">
-          <img src="https://i.postimg.cc/s2PBVXQb/Save-Inta-com-809844546-18127626013777366-8788243642535572350-n.jpg" alt="Ayaan Jamadar" loading="lazy" />
-        </div>
-        <div class="founder-info">
-          <span class="founder-role">Operations Director</span>
-          <h3 class="founder-name">Ayaan Jamadar</h3>
-        </div>
+      <div class="founder-box">
+        <span class="founder-role">Operations Director</span>
+        <h3 class="founder-name">Ayaan Jamadar</h3>
+        <p class="founder-desc">Overseeing atelier logistics, artisanal craftsmanship standards, and private client bespoke inquiries.</p>
       </div>
     </div>
   </section>
 
-  <!-- EDITORIAL LOOKBOOK -->
-  <section id="lookbook">
-    <div class="section-header">
-      <span class="section-tag">Curated Visuals</span>
-      <h2 class="section-title">Editorial Lookbook</h2>
-    </div>
-    <div class="lookbook-grid">
-      <div class="lookbook-item"><img src="https://i.postimg.cc/KYhkSLjS/Save-Inta-com-809939945-18127622818777366-4088908225769598992-n.jpg" alt="Lookbook 1" loading="lazy" /></div>
-      <div class="lookbook-item"><img src="https://i.postimg.cc/cJ7KsHty/Save-Inta-com-810051819-18127626004777366-7474619658573873979-n.jpg" alt="Lookbook 2" loading="lazy" /></div>
-      <div class="lookbook-item"><img src="https://i.postimg.cc/7L1Cx6Gp/Save-Inta-com-810246512-18127625995777366-1835888277462029942-n.jpg" alt="Lookbook 3" loading="lazy" /></div>
-      <div class="lookbook-item"><img src="https://i.postimg.cc/J00tc56B/Save-Inta-com-810485651-18127622758777366-6505205483590295971-n.jpg" alt="Lookbook 4" loading="lazy" /></div>
-      <div class="lookbook-item"><img src="https://i.postimg.cc/fb73wLS4/Save-Inta-com-810623442-18127625992777366-5157783398909784225-n.jpg" alt="Lookbook 5" loading="lazy" /></div>
-    </div>
-
-    <!-- DIRECT INQUIRY BANNER -->
-    <div class="inquiry-banner">
+  <!-- CONTACT BANNER -->
+  <section id="contact" style="border-bottom: none;">
+    <div class="contact-banner">
       <h3>Acquire a Bespoke Piece</h3>
-      <p>For custom fittings, pricing details, and private appointments, connect directly with our studio.</p>
-      <div class="contact-links">
-        <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20a%20bespoke%20order." target="_blank" class="contact-badge wa-badge">WhatsApp: +91 85114 36594</a>
-        <a href="https://instagram.com/tooyng.shop/" target="_blank" class="contact-badge">Instagram: @tooyng.shop</a>
+      <p>For custom fittings, pricing inquiries, and private orders, connect directly with our studio.</p>
+      <div class="banner-links">
+        <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20a%20bespoke%20piece." target="_blank" class="contact-pill wa-pill">WhatsApp: +91 85114 36594</a>
+        <a href="https://instagram.com/tooyng.shop/" target="_blank" class="contact-pill">Instagram: @tooyng.shop</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div>&copy; 2026 TOOYNG. All rights reserved. Handcrafted in Surat, India.</div>
+    <div>&copy; 2026 TOOYNG. Handcrafted in Surat, India.</div>
     <div>
       <a href="https://instagram.com/tooyng.shop/" target="_blank">Instagram</a> &bull;
       <a href="https://wa.me/918511436594" target="_blank">WhatsApp</a>
     </div>
   </footer>
+
+  <script>
+    const sliders = {
+      p1: { index: 0, total: 3 },
+      p2: { index: 0, total: 6 },
+      p3: { index: 0, total: 5 },
+      p4: { index: 0, total: 8 }
+    };
+
+    function moveSlide(id, step) {
+      const s = sliders[id];
+      s.index = (s.index + step + s.total) % s.total;
+      const track = document.getElementById('track-' + id);
+      track.style.transform = 'translateX(-' + (s.index * 100) + '%)';
+      document.getElementById('counter-' + id).textContent = (s.index + 1) + ' / ' + s.total;
+    }
+  </script>
 
 </body>
 </html>`;
