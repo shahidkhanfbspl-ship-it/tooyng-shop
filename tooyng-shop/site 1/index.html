@@ -1,0 +1,728 @@
+export default {
+  async fetch(request) {
+    const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOOYNG — Transformative Wearable Art</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #09090b;
+      --card-bg: #121215;
+      --border: rgba(255, 255, 255, 0.1);
+      --text-main: #f4f4f5;
+      --text-muted: #a1a1aa;
+      --gold: #d4af37;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 9, 11, 0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 5%;
+    }
+
+    .brand-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--text-main);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-logo span {
+      font-size: 0.9rem;
+      color: var(--gold);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--text-main);
+    }
+
+    .nav-cta {
+      padding: 9px 20px;
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    .nav-cta:hover {
+      background: #ffffff;
+      color: #000000;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      min-height: calc(100vh - 75px);
+      align-items: center;
+      padding: 0 5%;
+      border-bottom: 1px solid var(--border);
+      gap: 40px;
+    }
+
+    .hero-content {
+      padding: 40px 0;
+    }
+
+    .hero-tag {
+      font-size: 0.78rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.4rem, 4.8vw, 4.2rem);
+      font-weight: 400;
+      line-height: 1.12;
+      margin-bottom: 24px;
+      letter-spacing: 0.03em;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      display: block;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .hero-desc {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin-bottom: 36px;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-solid {
+      background: #ffffff;
+      color: #000000;
+      padding: 13px 26px;
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: #ffffff;
+      padding: 13px 26px;
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .hero-image-wrap {
+      width: 100%;
+      height: 75vh;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .hero-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 90px 5%;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      margin-bottom: 50px;
+      max-width: 600px;
+    }
+
+    .section-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2rem, 3.2vw, 2.8rem);
+      font-weight: 400;
+    }
+
+    /* THE CREATIONS GRID (4 PRODUCTS) */
+    .creations-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    .creation-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .slider-container {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .slide-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .slide-track img {
+      width: 100%;
+      height: 100%;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(9, 9, 11, 0.75);
+      color: #fff;
+      border: 1px solid var(--border);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+      z-index: 10;
+      backdrop-filter: blur(4px);
+      transition: background 0.2s;
+    }
+
+    .slider-btn:hover {
+      background: #000;
+    }
+
+    .slider-btn.prev { left: 12px; }
+    .slider-btn.next { right: 12px; }
+
+    .slide-counter {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.75);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: #fff;
+      backdrop-filter: blur(4px);
+    }
+
+    .card-content {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.35rem;
+      margin-bottom: 6px;
+    }
+
+    .card-caption {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+      font-weight: 300;
+    }
+
+    .price-inquiry-box {
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+    }
+
+    .inquiry-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .inquiry-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .inquiry-btn {
+      text-align: center;
+      padding: 10px 0;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .inquiry-btn.whatsapp {
+      background: #25D366;
+      color: #000;
+    }
+
+    .inquiry-btn.insta {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: #fff;
+    }
+
+    .inquiry-btn:hover {
+      opacity: 0.88;
+    }
+
+    /* FOUNDERS */
+    .founders-editorial {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .founder-box {
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      padding: 40px;
+      position: relative;
+    }
+
+    .founder-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .founder-role {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .founder-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+
+    .founder-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    /* CONTACT BANNER */
+    .contact-banner {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 60px 30px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact-banner h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .contact-banner p {
+      color: var(--text-muted);
+      margin-bottom: 26px;
+      font-size: 0.95rem;
+    }
+
+    .banner-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .contact-pill {
+      padding: 12px 24px;
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      color: #fff;
+    }
+
+    .contact-pill.wa-pill {
+      background: #25D366;
+      color: #000;
+      font-weight: 600;
+      border-color: #25D366;
+    }
+
+    footer {
+      padding: 36px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: #fff; }
+
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-image-wrap { height: 50vh; }
+      .creations-grid { grid-template-columns: 1fr; }
+      .founders-editorial { grid-template-columns: 1fr; }
+      nav ul { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="#" class="brand-logo">
+      <span>+</span> TOOYNG
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#creations">Creations</a></li>
+        <li><a href="#founders">Founders</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'd%20like%20to%20make%20a%20bespoke%20inquiry." target="_blank" class="nav-cta">Bespoke Inquiry</a>
+  </header>
+
+  <!-- HERO (UPDATED WITH 2ND IMAGE) -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-tag">Surat, India &mdash; Handcrafted Haute Couture</span>
+      <h1 class="hero-title">Transformative <em>Wearable Art</em></h1>
+      <p class="hero-desc">
+        We exist in the unhurried space between fine art and slow fashion. Every garment is treated as an individual canvas—hand-cut, tailored, and meticulously crafted.
+      </p>
+      <div class="hero-actions">
+        <a href="#creations" class="btn-solid">Explore 4 Pieces</a>
+        <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20interested%20in%20discussing%20a%20custom%20piece." target="_blank" class="btn-outline">WhatsApp Atelier</a>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <img src="https://i.postimg.cc/2ytyHLMV/Save-Inta-com-698324810-18107825149777366-6743558860781962725-n.jpg" alt="Transformative Wearable Art" />
+    </div>
+  </section>
+
+  <!-- THE CREATIONS (EXACTLY 4 CURATED PRODUCTS) -->
+  <section id="creations">
+    <div class="section-header">
+      <span class="section-tag">Curated Archive</span>
+      <h2 class="section-title">The Creations</h2>
+    </div>
+
+    <div class="creations-grid">
+
+      <!-- PRODUCT 01: MONOGRAM SILHOUETTE -->
+      <div class="creation-card">
+        <div class="slider-container">
+          <div class="slide-track" id="track-p1">
+            <img src="https://i.postimg.cc/ZnQnfv2L/Save-Inta-com-708993165-18110311522777366-482909009062222477-n.jpg" alt="Monogram View 1" />
+            <img src="https://i.postimg.cc/nrrMYGdN/Save-Inta-com-709005326-18110311495777366-6125675920120684866-n.jpg" alt="Monogram View 2" />
+            <img src="https://i.postimg.cc/x88qy3sW/Save-Inta-com-709921421-18110311486777366-6639307372825176493-n.jpg" alt="Monogram View 3" />
+            <img src="https://i.postimg.cc/Vvv5BW7x/Save-Inta-com-710226991-18110311510777366-8547035354425217381-n.jpg" alt="Monogram View 4" />
+            <img src="https://i.postimg.cc/hjpfd50N/Save-Inta-com-712207470-18110311477777366-8800223110826816673-n.jpg" alt="Monogram View 5" />
+            <img src="https://i.postimg.cc/7hRhBJd3/Save-Inta-com-712227891-18110311531777366-3291071189053129033-n.jpg" alt="Monogram View 6" />
+          </div>
+          <button class="slider-btn prev" onclick="moveSlide('p1', -1)">&#10094;</button>
+          <button class="slider-btn next" onclick="moveSlide('p1', 1)">&#10095;</button>
+          <div class="slide-counter" id="counter-p1">1 / 6</div>
+        </div>
+        <div class="card-content">
+          <div>
+            <div class="card-meta">
+              <span>Bespoke Edition</span>
+              <span>Piece 01</span>
+            </div>
+            <h3 class="card-title">Hand-Detailed Monogram Silhouette</h3>
+            <p class="card-caption">Layered raw textiles, custom artisanal branding, and multi-angle paneling.</p>
+          </div>
+          <div class="price-inquiry-box">
+            <span class="inquiry-label">For Price DM on Insta / WhatsApp</span>
+            <div class="inquiry-buttons">
+              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2001%20(Monogram%20Silhouette)." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
+              <a href="https://instagram.com/tooyng.shop/" target="_blank" class="inquiry-btn insta">DM Insta</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT 02: ATELIER TAILORED CANVAS JACKET -->
+      <div class="creation-card">
+        <div class="slider-container">
+          <div class="slide-track" id="track-p2">
+            <img src="https://i.postimg.cc/fbQtnXyQ/Save-Inta-com-800538801-18126733585777366-8827391549615843940-n.jpg" alt="Atelier Canvas View 1" />
+            <img src="https://i.postimg.cc/mrWzfMkG/Save-Inta-com-800603551-18126733567777366-4981473501512892217-n.jpg" alt="Atelier Canvas View 2" />
+            <img src="https://i.postimg.cc/HL0Jpxcv/Save-Inta-com-800603552-18126733603777366-4382438410346774403-n.jpg" alt="Atelier Canvas View 3" />
+            <img src="https://i.postimg.cc/vmwgF9Bk/Save-Inta-com-800715042-18126733558777366-902083303958726911-n.jpg" alt="Atelier Canvas View 4" />
+            <img src="https://i.postimg.cc/pdQ92Th4/Save-Inta-com-800862044-18126733576777366-9014182363031779997-n.jpg" alt="Atelier Canvas View 5" />
+          </div>
+          <button class="slider-btn prev" onclick="moveSlide('p2', -1)">&#10094;</button>
+          <button class="slider-btn next" onclick="moveSlide('p2', 1)">&#10095;</button>
+          <div class="slide-counter" id="counter-p2">1 / 5</div>
+        </div>
+        <div class="card-content">
+          <div>
+            <div class="card-meta">
+              <span>Bespoke Edition</span>
+              <span>Piece 02</span>
+            </div>
+            <h3 class="card-title">Atelier Tailored Canvas Jacket</h3>
+            <p class="card-caption">Hand-cut heavy fabric with bespoke embroidery accents and signature finish.</p>
+          </div>
+          <div class="price-inquiry-box">
+            <span class="inquiry-label">For Price DM on Insta / WhatsApp</span>
+            <div class="inquiry-buttons">
+              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2002%20(Atelier%20Canvas%20Jacket)." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
+              <a href="https://instagram.com/tooyng.shop/" target="_blank" class="inquiry-btn insta">DM Insta</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT 03: SCULPTURAL LAYERED KIMONO -->
+      <div class="creation-card">
+        <div class="slider-container">
+          <div class="slide-track" id="track-p3">
+            <img src="https://i.postimg.cc/L5W5ygw5/Save-Inta-com-809209764-18127622860777366-5819116562713908464-n.jpg" alt="Kimono View 1" />
+            <img src="https://i.postimg.cc/1XdXWV2t/Save-Inta-com-809409724-18127622749777366-2043724227551422012-n.jpg" alt="Kimono View 2" />
+            <img src="https://i.postimg.cc/KYhkSLjS/Save-Inta-com-809939945-18127622818777366-4088908225769598992-n.jpg" alt="Kimono View 3" />
+            <img src="https://i.postimg.cc/J00tc56B/Save-Inta-com-810485651-18127622758777366-6505205483590295971-n.jpg" alt="Kimono View 4" />
+          </div>
+          <button class="slider-btn prev" onclick="moveSlide('p3', -1)">&#10094;</button>
+          <button class="slider-btn next" onclick="moveSlide('p3', 1)">&#10095;</button>
+          <div class="slide-counter" id="counter-p3">1 / 4</div>
+        </div>
+        <div class="card-content">
+          <div>
+            <div class="card-meta">
+              <span>Bespoke Edition</span>
+              <span>Piece 03</span>
+            </div>
+            <h3 class="card-title">Sculptural Layered Kimono</h3>
+            <p class="card-caption">Signature Japanese kimono silhouette reimagined with heavy streetwear draping.</p>
+          </div>
+          <div class="price-inquiry-box">
+            <span class="inquiry-label">For Price DM on Insta / WhatsApp</span>
+            <div class="inquiry-buttons">
+              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2003%20(Sculptural%20Kimono)." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
+              <a href="https://instagram.com/tooyng.shop/" target="_blank" class="inquiry-btn insta">DM Insta</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT 04: SIGNATURE ARTISANAL DRAPED SILHOUETTE -->
+      <div class="creation-card">
+        <div class="slider-container">
+          <div class="slide-track" id="track-p4">
+            <img src="https://i.postimg.cc/s2PBVXQb/Save-Inta-com-809844546-18127626013777366-8788243642535572350-n.jpg" alt="Draped View 1" />
+            <img src="https://i.postimg.cc/cJ7KsHty/Save-Inta-com-810051819-18127626004777366-7474619658573873979-n.jpg" alt="Draped View 2" />
+            <img src="https://i.postimg.cc/7L1Cx6Gp/Save-Inta-com-810246512-18127625995777366-1835888277462029942-n.jpg" alt="Draped View 3" />
+            <img src="https://i.postimg.cc/fb73wLS4/Save-Inta-com-810623442-18127625992777366-5157783398909784225-n.jpg" alt="Draped View 4" />
+          </div>
+          <button class="slider-btn prev" onclick="moveSlide('p4', -1)">&#10094;</button>
+          <button class="slider-btn next" onclick="moveSlide('p4', 1)">&#10095;</button>
+          <div class="slide-counter" id="counter-p4">1 / 4</div>
+        </div>
+        <div class="card-content">
+          <div>
+            <div class="card-meta">
+              <span>Bespoke Edition</span>
+              <span>Piece 04</span>
+            </div>
+            <h3 class="card-title">Signature Artisanal Draped Silhouette</h3>
+            <p class="card-caption">Raw cut structured flow with handcrafted detailing and tailored bespoke seams.</p>
+          </div>
+          <div class="price-inquiry-box">
+            <span class="inquiry-label">For Price DM on Insta / WhatsApp</span>
+            <div class="inquiry-buttons">
+              <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20the%20price%20of%20Piece%2004%20(Draped%20Silhouette)." target="_blank" class="inquiry-btn whatsapp">WhatsApp</a>
+              <a href="https://instagram.com/tooyng.shop/" target="_blank" class="inquiry-btn insta">DM Insta</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- THE FOUNDERS -->
+  <section id="founders">
+    <div class="section-header">
+      <span class="section-tag">Visionaries</span>
+      <h2 class="section-title">The Founders</h2>
+    </div>
+    <div class="founders-editorial">
+      <div class="founder-box">
+        <span class="founder-role">Creative Director</span>
+        <h3 class="founder-name">Tariq Ilyas</h3>
+        <p class="founder-desc">Driving the artistic vision, hand-painted aesthetic, and garment philosophy behind each bespoke silhouette.</p>
+      </div>
+      <div class="founder-box">
+        <span class="founder-role">Operations Director</span>
+        <h3 class="founder-name">Ayaan Jamadar</h3>
+        <p class="founder-desc">Overseeing atelier logistics, artisanal craftsmanship standards, and private client bespoke inquiries.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT BANNER -->
+  <section id="contact" style="border-bottom: none;">
+    <div class="contact-banner">
+      <h3>Acquire a Bespoke Piece</h3>
+      <p>For custom fittings, pricing inquiries, and private orders, connect directly with our studio.</p>
+      <div class="banner-links">
+        <a href="https://wa.me/918511436594?text=Hi%20TOOYNG,%20I'm%20inquiring%20about%20a%20bespoke%20piece." target="_blank" class="contact-pill wa-pill">WhatsApp: +91 85114 36594</a>
+        <a href="https://instagram.com/tooyng.shop/" target="_blank" class="contact-pill">Instagram: @tooyng.shop</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>&copy; 2026 TOOYNG. Handcrafted in Surat, India.</div>
+    <div>
+      <a href="https://instagram.com/tooyng.shop/" target="_blank">Instagram</a> &bull;
+      <a href="https://wa.me/918511436594" target="_blank">WhatsApp</a>
+    </div>
+  </footer>
+
+  <script>
+    const sliders = {
+      p1: { index: 0, total: 6 },
+      p2: { index: 0, total: 5 },
+      p3: { index: 0, total: 4 },
+      p4: { index: 0, total: 4 }
+    };
+
+    function moveSlide(id, step) {
+      const s = sliders[id];
+      s.index = (s.index + step + s.total) % s.total;
+      const track = document.getElementById('track-' + id);
+      track.style.transform = 'translateX(-' + (s.index * 100) + '%)';
+      document.getElementById('counter-' + id).textContent = (s.index + 1) + ' / ' + s.total;
+    }
+  </script>
+
+</body>
+</html>`;
+
+    return new Response(html, {
+      headers: {
+        "content-type": "text/html;charset=UTF-8",
+        "cache-control": "public, max-age=3600"
+      }
+    });
+  }
+};
