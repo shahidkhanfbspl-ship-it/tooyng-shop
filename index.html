@@ -143,7 +143,6 @@
         </div>
       </div>
     </section>
-
     <section class="section" id="process">
       <div class="container">
         <span class="tag" data-gz="Studio Routine">Artisanal Method</span>
@@ -229,4 +228,142 @@
               <div class="s-dots"><span class="s-dot active"></span><span class="s-dot"></span></div>
             </div>
             <div class="card-body">
-   
+              <h3 data-gz="Atelier Statement Outerwear">Painted Atelier Outerwear</h3>
+              <p data-gz="Structured canvas outerwear with painterly depth. Turns you into walking art.">Structured canvas outerwear with painterly depth for statement styling.</p>
+              <div class="card-foot"><span class="price">₹4,000 – ₹6,000</span><a onclick="openDrawer('Painted Outerwear')" data-gz="Pre-Order →">Pre-Order →</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="founders">
+      <div class="container">
+        <span class="tag" data-gz="The Architects">The Visionaries</span>
+        <h2 class="title" data-gz="Who's In The Kitchen?">The Hands Behind TOOYNG</h2>
+        <div class="grid-3" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+          <div class="box">
+            <span style="font-size:0.7rem;color:var(--lavender);text-transform:uppercase;">Creative Director & Artist</span>
+            <h3 style="margin:10px 0;">Tariq Ilyas</h3>
+            <p data-gz="Treats garments like kinetic sculptures. Tariq leads creative worldbuilding and individual hand-painting.">Leads creative direction, line-art, and direct hand-painting on every TOOYNG piece.</p>
+          </div>
+          <div class="box">
+            <span style="font-size:0.7rem;color:var(--lavender);text-transform:uppercase;">Co-Founder & Operations</span>
+            <h3 style="margin:10px 0;">Ayaan Jamadar</h3>
+            <p data-gz="The structural powerhouse. Ayaan runs precision pattern cutting, tailoring perfection, and fit testing.">Oversees master pattern construction and tailored precision for structural fit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="visit">
+      <div class="container">
+        <span class="tag" data-gz="Physical Space">Physical Presence</span>
+        <h2 class="title" data-gz="Pull Up To Flagship">Experience The Label</h2>
+        <div class="grid-3" style="grid-template-columns:1.2fr 0.8fr;">
+          <div class="box">
+            <h3>TOOYNG Atelier Store</h3>
+            <p style="margin:10px 0;">Shop 122G, Ground Floor, City Light Shopping Centre, City Light Road, Surat, Gujarat.</p>
+            <p style="color:var(--muted);font-size:0.82rem;">Touch raw fabrics, observe canvas work live, and get measured for bespoke commissions.</p>
+            <div style="margin-top:15px;padding-top:12px;border-top:1px solid var(--border);">
+              <h4>Soil Cafe, Vesu</h4>
+              <p style="font-size:0.8rem;color:var(--muted);">Artistic installations displayed inside Surat’s premier concept dining space.</p>
+            </div>
+          </div>
+          <div class="box">
+            <h3>Atelier Hours</h3>
+            <p style="margin-top:8px;">Mon – Sat: 11:30 AM – 9:00 PM</p>
+            <p>Sunday: 1:00 PM – 8:30 PM</p>
+            <p style="color:var(--muted);font-size:0.78rem;margin-top:14px;">✦ Fitting consultations by prior appointment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()">
+      <div class="drawer" onclick="event.stopPropagation()">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:12px;">
+          <h3 style="font-family:var(--f-disp);" data-gz="Commission A 1-of-1">Bespoke Commission</h3>
+          <button onclick="closeDrawer()" style="background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;">&times;</button>
+        </div>
+        <p style="font-size:0.8rem;color:var(--muted);margin-bottom:18px;" data-gz="Talk directly with Tariq & Ayaan on WhatsApp to lock in your custom piece.">Fill out your details to connect directly with our atelier team on WhatsApp.</p>
+        <form onsubmit="submitInquiry(event)">
+          <div class="form-group"><label>Your Name</label><input type="text" id="cName" required placeholder="e.g. Shahid Khan"/></div>
+          <div class="form-group"><label>Piece</label><input type="text" id="cPiece" value="Hand-Painted Signature Denim"/></div>
+          <div class="form-group"><label>Size</label><select id="cSize"><option>Small (S)</option><option selected>Medium (M)</option><option>Large (L)</option><option>Custom Measure</option></select></div>
+          <button type="submit" class="btn btn-w" style="width:100%;margin-top:8px;" data-gz="Tap In On WhatsApp 🔥">Connect On WhatsApp</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;">
+        <div>
+          <h3 style="font-family:var(--f-disp);letter-spacing:2px;">TOOYNG</h3>
+          <p style="font-size:0.75rem;color:var(--muted);">Premium Handcrafted Designer Label • Surat, India</p>
+        </div>
+        <div style="display:flex;gap:16px;font-size:0.78rem;color:var(--muted);">
+          <a href="https://instagram.com/tooyngshop" target="_blank">@tooyngshop</a>
+          <a href="https://instagram.com/artbytariqilyas" target="_blank">@artbytariqilyas</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    let isGZ = false;
+    function toggleGenZMode() {
+      const w = document.getElementById('pageWrapper');
+      w.classList.add('flipping');
+      setTimeout(() => {
+        isGZ = !isGZ;
+        document.body.classList.toggle('genz-mode', isGZ);
+        document.querySelectorAll('[data-gz]').forEach(el => {
+          if (!el.dataset.orig) el.dataset.orig = el.innerHTML;
+          el.innerHTML = isGZ ? el.dataset.gz : el.dataset.orig;
+        });
+        document.getElementById('modeLabel').innerText = isGZ ? 'Classic Mode' : 'Gen-Z Mode';
+        document.getElementById('modeIcon').innerText = isGZ ? '👔' : '⚡';
+      }, 400);
+      setTimeout(() => w.classList.remove('flipping'), 850);
+    }
+
+    const sliders = {};
+    function moveSlide(id, dir) {
+      const el = document.getElementById(id);
+      const wrap = el.querySelector('.slides');
+      const imgs = el.querySelectorAll('img');
+      const dots = el.querySelectorAll('.s-dot');
+      sliders[id] = (sliders[id] || 0) + dir;
+      if (sliders[id] < 0) sliders[id] = imgs.length - 1;
+      if (sliders[id] >= imgs.length) sliders[id] = 0;
+      wrap.style.transform = `translateX(-${sliders[id] * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === sliders[id]));
+    }
+
+    function filterShop(cat, btn) {
+      document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.card').forEach(c => {
+        c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'flex' : 'none';
+      });
+    }
+
+    function openDrawer(p) {
+      if (p) document.getElementById('cPiece').value = p;
+      document.getElementById('drawerOverlay').classList.add('active');
+    }
+    function closeDrawer() {
+      document.getElementById('drawerOverlay').classList.remove('active');
+    }
+    function submitInquiry(e) {
+      e.preventDefault();
+      const n = document.getElementById('cName').value, p = document.getElementById('cPiece').value, s = document.getElementById('cSize').value;
+      const msg = `Hello TOOYNG Atelier, bespoke inquiry:%0A✦ Name: ${encodeURIComponent(n)}%0A✦ Piece: ${encodeURIComponent(p)}%0A✦ Size: ${encodeURIComponent(s)}`;
+      window.open(`https://wa.me/?text=${msg}`, '_blank');
+      closeDrawer();
+    }
+  </script>
+</body>
+</html>
+
