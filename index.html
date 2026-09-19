@@ -363,6 +363,63 @@
       window.open(`https://wa.me/?text=${msg}`, '_blank');
       closeDrawer();
     }
+  <script>
+    let isGZ = false;
+    function toggleGenZMode() {
+      const w = document.getElementById('pageWrapper');
+      w.classList.add('flipping');
+      setTimeout(() => {
+        isGZ = !isGZ;
+        document.body.classList.toggle('genz-mode', isGZ);
+        document.querySelectorAll('[data-gz]').forEach(el => {
+          if (!el.dataset.orig) el.dataset.orig = el.innerHTML;
+          el.innerHTML = isGZ ? el.dataset.gz : el.dataset.orig;
+        });
+        document.getElementById('modeLabel').innerText = isGZ ? 'Classic Mode' : 'Gen-Z Mode';
+        document.getElementById('modeIcon').innerText = isGZ ? '👔' : '⚡';
+      }, 400);
+      setTimeout(() => w.classList.remove('flipping'), 850);
+    }
+
+    const sliders = {};
+    function moveSlide(id, dir) {
+      const el = document.getElementById(id);
+      const wrap = el.querySelector('.slides');
+      const imgs = el.querySelectorAll('img');
+      const dots = el.querySelectorAll('.s-dot');
+      sliders[id] = (sliders[id] || 0) + dir;
+      if (sliders[id] < 0) sliders[id] = imgs.length - 1;
+      if (sliders[id] >= imgs.length) sliders[id] = 0;
+      wrap.style.transform = `translateX(-${sliders[id] * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === sliders[id]));
+    }
+
+    function filterShop(cat, btn) {
+      document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.card').forEach(c => {
+        c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'flex' : 'none';
+      });
+    }
+
+    function openDrawer(p) {
+      if (p) document.getElementById('cPiece').value = p;
+      document.getElementById('drawerOverlay').classList.add('active');
+    }
+    function closeDrawer() {
+      document.getElementById('drawerOverlay').classList.remove('active');
+    }
+    function submitInquiry(e) {
+      e.preventDefault();
+      const n = document.getElementById('cName').value, p = document.getElementById('cPiece').value, s = document.getElementById('cSize').value;
+      const msg = `Hello TOOYNG Atelier, bespoke inquiry:%0A✦ Name: ${encodeURIComponent(n)}%0A✦ Piece: ${encodeURIComponent(p)}%0A✦ Size: ${encodeURIComponent(s)}`;
+      window.open(`https://wa.me/?text=${msg}`, '_blank');
+      closeDrawer();
+    }
+  </script>
+</body>
+</html>
+
   </script>
 </body>
 </html>
