@@ -3,861 +3,230 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TOOYNG — Premium Handcrafted Designer Label | Transformative Wearable Art</title>
-  <meta name="description" content="TOOYNG is an artisanal handcrafted designer label. Every garment is an individual canvas, hand-designed, hand-cut, and hand-painted in Surat, India." />
-
-  <!-- Google Fonts: Luxury Display Serif & High-Fashion Minimalist Sans -->
+  <title>TOOYNG — Premium Handcrafted Designer Label</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500;600;700&family=Syne:wght@400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Montserrat:wght@300;400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   <style>
-    /* ==========================================================================
-       TOOYNG DESIGN SYSTEM (MONOCHROME LUXURY + ATELIER ACCENTS)
-       ========================================================================== */
-    :root {
-      --bg-dark: #090909;
-      --bg-card: #121212;
-      --bg-card-hover: #171717;
-      --border: rgba(255, 255, 255, 0.12);
-      --border-light: rgba(255, 255, 255, 0.22);
-      --text-main: #f5f5f5;
-      --text-muted: #9c9c9c;
-      --text-dim: #616161;
-      --accent-white: #ffffff;
-      
-      /* Heal The World Pastel Accents */
-      --pastel-lavender: #d8cfff;
-      --pastel-blue: #c8e4e8;
-      --pastel-pink: #f7d5cc;
-      --pastel-sage: #d3e2c9;
-      --pastel-cream: #f9f6ed;
-
-      --font-display: 'Syne', sans-serif;
-      --font-serif: 'Cormorant Garamond', serif;
-      --font-sans: 'Montserrat', sans-serif;
-      --font-genz: 'Space Grotesk', sans-serif;
-      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      font-family: var(--font-sans);
-    }
-
-    body {
-      overflow-x: hidden;
-      line-height: 1.6;
-      background: radial-gradient(circle at 50% 0%, #181818 0%, #090909 75%);
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    ul { list-style: none; }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* 3D FLIP CONTAINER & ANIMATION */
-    #pageWrapper {
-      transform-style: preserve-3d;
-      transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
-      width: 100%;
-      min-height: 100vh;
-    }
-
-    .flipping {
-      animation: page3DFlip 0.85s cubic-bezier(0.45, 0.05, 0.55, 0.95) forwards;
-    }
-
-    @keyframes page3DFlip {
-      0% { transform: perspective(1800px) rotateY(0deg) scale(1); }
-      50% { transform: perspective(1800px) rotateY(180deg) scale(0.92); filter: blur(2px) contrast(120%); }
-      100% { transform: perspective(1800px) rotateY(360deg) scale(1); filter: blur(0); }
-    }
-
-    /* GEN-Z STYLING OVERLAYS */
-    body.genz-mode {
-      background: radial-gradient(circle at 50% 0%, #1f1435 0%, #0a0712 85%);
-      --border: rgba(216, 207, 255, 0.25);
-      --border-light: rgba(200, 228, 232, 0.45);
-      --bg-card: #151024;
-      --bg-card-hover: #1d1633;
-    }
-
-    body.genz-mode .section-tag::before {
-      content: "⚡";
-      color: var(--pastel-lavender);
-    }
-
-    /* FLOATING GEN-Z TOGGLE BUTTON */
-    .mode-switch-wrapper {
-      position: fixed;
-      top: 22px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1100;
-    }
-
-    .mode-switch-btn {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 22px;
-      background: rgba(18, 18, 18, 0.85);
-      backdrop-filter: blur(14px);
-      border: 1px solid var(--border-light);
-      border-radius: 40px;
-      color: var(--text-main);
-      font-family: var(--font-sans);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      cursor: pointer;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-      transition: var(--transition);
-    }
-
-    .mode-switch-btn:hover {
-      background: #ffffff;
-      color: #090909;
-      transform: translateY(-2px);
-      box-shadow: 0 12px 35px rgba(255,255,255,0.25);
-    }
-
-    body.genz-mode .mode-switch-btn {
-      background: linear-gradient(135deg, rgba(216, 207, 255, 0.2), rgba(200, 228, 232, 0.2));
-      border-color: var(--pastel-lavender);
-      color: #ffffff;
-      box-shadow: 0 0 20px rgba(216, 207, 255, 0.3);
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1320px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .section {
-      padding: 120px 0;
-      position: relative;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .section-tag {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      color: var(--text-muted);
-      margin-bottom: 14px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .section-tag::before {
-      content: "✦";
-      font-size: 0.8rem;
-      color: var(--accent-white);
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      line-height: 1.15;
-      margin-bottom: 24px;
-      text-transform: uppercase;
-    }
-
-    .section-desc {
-      font-family: var(--font-serif);
-      font-size: 1.35rem;
-      color: var(--text-muted);
-      max-width: 680px;
-      line-height: 1.6;
-      font-style: italic;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      padding: 15px 34px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: var(--transition);
-      border-radius: 0;
-      font-family: var(--font-sans);
-    }
-
-    .btn-white {
-      background: var(--accent-white);
-      color: var(--bg-dark);
-      border: 1px solid var(--accent-white);
-    }
-
-    .btn-white:hover {
-      background: transparent;
-      color: var(--accent-white);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--accent-white);
-      border: 1px solid var(--border-light);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--accent-white);
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    /* HEADER */
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      padding: 22px 0;
-      transition: var(--transition);
-      background: rgba(9, 9, 9, 0.85);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .site-header.scrolled {
-      padding: 15px 0;
-      background: rgba(9, 9, 9, 0.96);
-      border-bottom-color: var(--border);
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-logo svg {
-      width: 22px;
-      height: 22px;
-      fill: var(--accent-white);
-    }
-
-    .brand-wordmark {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      font-weight: 800;
-      letter-spacing: 3px;
-      color: var(--accent-white);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-    }
-
-    .nav-links a {
-      font-size: 0.75rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent-white);
-    }
-
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--text-main);
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    /* HERO */
-    .hero-section {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: 140px;
-      padding-bottom: 90px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-bg-lines {
-      position: absolute;
-      right: -5%;
-      top: 15%;
-      width: 55vw;
-      max-width: 750px;
-      opacity: 0.22;
-      pointer-events: none;
-      animation: floatArt 12s ease-in-out infinite alternate;
-    }
-
-    @keyframes floatArt {
-      0% { transform: translateY(0) rotate(0deg); }
-      100% { transform: translateY(-25px) rotate(2deg); }
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .hero-caption {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.8rem, 6.2vw, 5.2rem);
-      font-weight: 800;
-      line-height: 1.05;
-      text-transform: uppercase;
-      letter-spacing: -1px;
-      margin-bottom: 25px;
-    }
-
-    .hero-title span {
-      display: block;
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-weight: 300;
-      text-transform: none;
-      color: #eaeaea;
-      font-size: 0.85em;
-    }
-
-    .hero-lead {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      line-height: 1.8;
-      max-width: 560px;
-      margin-bottom: 38px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 50px;
-    }
-
-    .hero-badges {
-      display: flex;
-      gap: 32px;
-      padding-top: 25px;
-      border-top: 1px solid var(--border);
-    }
-
-    .badge-item h4 {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--accent-white);
-    }
-
-    .badge-item p {
-      font-size: 0.75rem;
-      letter-spacing: 1px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-    }
-
-    .hero-visual-card {
-      position: relative;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      padding: 16px;
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
-    }
-
-    .hero-visual-inner {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 4/5;
-      background: #141414;
-    }
-
-    .hero-visual-inner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: contrast(108%);
-      transition: transform 0.8s ease;
-    }
-
-    .hero-visual-card:hover .hero-visual-inner img {
-      transform: scale(1.04);
-    }
-
-    .art-stamp {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      background: rgba(9, 9, 9, 0.88);
-      backdrop-filter: blur(10px);
-      padding: 14px 20px;
-      border: 1px solid var(--border);
-      font-family: var(--font-serif);
-      font-size: 0.95rem;
-      font-style: italic;
-    }
-
-    /* MANIFESTO */
-    .manifesto-wrap {
-      text-align: center;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .manifesto-quote {
-      font-family: var(--font-serif);
-      font-size: clamp(1.8rem, 3.4vw, 2.9rem);
-      font-weight: 300;
-      line-height: 1.4;
-      margin: 40px 0;
-      color: #fafafa;
-    }
-
-    .manifesto-quote em {
-      font-style: italic;
-      color: var(--text-muted);
-      font-weight: 400;
-    }
-
-    .manifesto-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      margin-top: 60px;
-      text-align: left;
-    }
-
-    .manifesto-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      padding: 36px 28px;
-      transition: var(--transition);
-    }
-
-    .manifesto-card:hover {
-      border-color: var(--border-light);
-      background: var(--bg-card-hover);
-      transform: translateY(-5px);
-    }
-
-    .card-number {
-      font-family: var(--font-display);
-      font-size: 0.9rem;
-      color: var(--text-dim);
-      margin-bottom: 20px;
-      display: block;
-    }
-
-    .manifesto-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      margin-bottom: 14px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .manifesto-card p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-
-    /* PROCESS */
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      margin-top: 60px;
-    }
-
-    .step-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      padding: 35px 26px;
-      transition: var(--transition);
-    }
-
-    .step-box:hover {
-      border-color: var(--border-light);
-      background: var(--bg-card-hover);
-    }
-
-    .step-num {
-      font-family: var(--font-display);
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: rgba(255, 255, 255, 0.15);
-      margin-bottom: 20px;
-      display: block;
-    }
-
-    .step-box h3 {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-      letter-spacing: 1px;
-    }
-
-    .step-box p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-
-    /* ART & PHILOSOPHY */
-    .art-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-      margin-top: 40px;
-    }
-
-    .art-illustration-box {
-      border: 1px solid var(--border);
-      padding: 40px;
-      background: radial-gradient(circle at center, #1c1c1c 0%, #0c0c0c 80%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .art-illustration-box svg {
-      width: 100%;
-      max-width: 360px;
-      height: auto;
-      stroke: var(--accent-white);
-      stroke-width: 1.4;
-      fill: none;
-      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.12));
-    }
-
-    .art-text-box h3 {
-      font-family: var(--font-serif);
-      font-size: 2.2rem;
-      font-style: italic;
-      line-height: 1.35;
-      margin-bottom: 20px;
-      font-weight: 400;
-    }
-
-    .art-text-box p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-      line-height: 1.8;
-    }
-
-    .art-principles {
-      margin-top: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .principle-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-    }
-
-    .principle-item span {
-      color: var(--accent-white);
-    }
-
-    .principle-item h5 {
-      font-family: var(--font-display);
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 4px;
-    }
-
-    .principle-item p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 0;
-    }
-
-    /* IN THE STUDIO (ORIGINAL ATELIER SHOTS) */
-    .studio-gallery {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
-      gap: 20px;
-      margin-top: 50px;
-    }
-
-    .studio-item {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      background: var(--bg-card);
-      aspect-ratio: 4/5;
-    }
-
-    .studio-item.large {
-      grid-row: span 1;
-      aspect-ratio: 16/11;
-    }
-
-    .studio-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.7s ease;
-      filter: contrast(106%);
-    }
-
-    .studio-item:hover img {
-      transform: scale(1.05);
-    }
-
-    .studio-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 24px;
-      background: linear-gradient(to top, rgba(9, 9, 9, 0.94) 0%, transparent 100%);
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
-
-    .studio-overlay h4 {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--accent-white);
-    }
-
-    .studio-overlay p {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    /* HEAL THE WORLD */
-    .collection-teaser-card {
-      background: linear-gradient(135deg, #161616 0%, #0d0d0d 100%);
-      border: 1px solid var(--border);
-      padding: 60px 50px;
-      margin-top: 50px;
-    }
-
-    .collection-badge {
-      display: inline-block;
-      padding: 6px 14px;
-      border: 1px solid rgba(216, 207, 255, 0.4);
-      background: rgba(216, 207, 255, 0.08);
-      color: var(--pastel-lavender);
-      font-size: 0.72rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-
-    .collection-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .collection-album-tagline {
-      font-family: var(--font-serif);
-      font-size: 1.9rem;
-      font-style: italic;
-      color: var(--text-main);
-      margin-bottom: 20px;
-      line-height: 1.4;
-    }
-
-    .palette-showcase {
-      margin-top: 30px;
-    }
-
-    .palette-label {
-      font-size: 0.75rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 14px;
-      display: block;
-    }
-
-    .swatches {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .swatch {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255, 255, 255, 0.04);
-      padding: 6px 14px;
-      border: 1px solid var(--border);
-      border-radius: 40px;
-    }
-
-    .color-dot {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-    }
-
-    .swatch span {
-      font-size: 0.78rem;
-      color: #ddd;
-    }
-
-    .collection-preview-mockup {
-      border: 1px solid var(--border);
-      background: #080808;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .collection-preview-mockup img {
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      filter: contrast(105%);
-    }
-
-    /* THE CREATIONS & MULTI-ANGLE SLIDER */
-    .shop-filter {
-      display: flex;
-      gap: 12px;
-      margin: 40px 0 50px;
-      flex-wrap: wrap;
-    }
-
-    .filter-btn {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      padding: 10px 22px;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      cursor: pointer;
-      font-family: var(--font-sans);
-      transition: var(--transition);
-    }
-
-    .filter-btn.active, .filter-btn:hover {
-      background: var(--accent-white);
-      color: var(--bg-dark);
-      border-color: var(--accent-white);
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-
-    .product-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .product-card:hover {
-      border-color: var(--border-light);
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-    }
-
-    /* MULTI-ANGLE SLIDER STYLES */
-    .product-slider {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 3/4;
-      overflow: hidden;
-      background: #191919;
-    }
-
-    .slides-wrapper {
-      display: flex;
-      width: 100%;
-      height: 100%;
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .slide-img {
-      min-width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .slider-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(9, 9, 9, 0.75);
-      border: 1px solid var(--border);
-      color: var(--accent-white);
-      width: 32px;
-      height: 3
+    :root{--bg:#090909;--card:#121212;--border:rgba(255,255,255,0.12);--text:#f5f5f5;--muted:#9c9c9c;--white:#fff;--lavender:#d8cfff;--f-disp:'Syne',sans-serif;--f-ser:'Cormorant Garamond',serif;--f-sans:'Montserrat',sans-serif;}
+    *{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;}
+    body{background:radial-gradient(circle at 50% 0%,#181818 0%,#090909 75%);color:var(--text);font-family:var(--f-sans);overflow-x:hidden;line-height:1.6;}
+    a{color:inherit;text-decoration:none;}
+    img{max-width:100%;display:block;}
+    .container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px;}
+    .section{padding:90px 0;border-bottom:1px solid var(--border);}
+    .tag{font-size:0.72rem;text-transform:uppercase;letter-spacing:3px;color:var(--muted);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+    .tag::before{content:"✦";color:var(--white);}
+    .title{font-family:var(--f-disp);font-size:clamp(1.8rem,3.6vw,3rem);text-transform:uppercase;margin-bottom:18px;line-height:1.15;}
+    .desc{font-family:var(--f-ser);font-size:1.25rem;color:var(--muted);font-style:italic;max-width:620px;}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;font-size:0.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border:1px solid var(--white);font-family:var(--f-sans);background:transparent;color:var(--white);transition:0.3s;}
+    .btn-w{background:var(--white);color:var(--bg);}
+    .btn-w:hover{background:transparent;color:var(--white);}
+    .btn-o:hover{background:rgba(255,255,255,0.06);}
+    #pageWrapper{transform-style:preserve-3d;transition:transform 0.8s ease;min-height:100vh;}
+    .flipping{animation:flip3D 0.85s forwards;}
+    @keyframes flip3D{0%{transform:perspective(1800px) rotateY(0deg);}50%{transform:perspective(1800px) rotateY(180deg) scale(0.92);filter:blur(2px);}100%{transform:perspective(1800px) rotateY(360deg);filter:none;}}
+    body.genz-mode{background:radial-gradient(circle at 50% 0%,#1b1233 0%,#080511 85%);--border:rgba(216,207,255,0.25);--card:#150f24;}
+    body.genz-mode .tag::before{content:"⚡";color:var(--lavender);}
+    .mode-wrap{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:1100;}
+    .mode-btn{display:flex;align-items:center;gap:8px;padding:8px 18px;background:rgba(18,18,18,0.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.25);border-radius:30px;color:var(--text);font-size:0.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;box-shadow:0 8px 25px rgba(0,0,0,0.6);}
+    body.genz-mode .mode-btn{background:linear-gradient(135deg,rgba(216,207,255,0.3),rgba(200,228,232,0.3));border-color:var(--lavender);color:#fff;}
+    header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:18px 0;background:rgba(9,9,9,0.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.06);}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;}
+    .brand{font-family:var(--f-disp);font-size:1.4rem;font-weight:800;letter-spacing:3px;}
+    .nav-links{display:flex;gap:20px;}
+    .nav-links a{font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+    .hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 70px;}
+    .hero-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:40px;align-items:center;}
+    .badges{display:flex;gap:24px;padding-top:20px;border-top:1px solid var(--border);margin-top:35px;}
+    .badges h4{font-family:var(--f-disp);font-size:1.1rem;}
+    .badges p{font-size:0.68rem;color:var(--muted);text-transform:uppercase;}
+    .h-card{background:var(--card);border:1px solid var(--border);padding:12px;}
+    .h-img{aspect-ratio:4/5;overflow:hidden;background:#141414;}
+    .h-img img{width:100%;height:100%;object-fit:cover;}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;}
+    .box{background:var(--card);border:1px solid var(--border);padding:28px 22px;}
+    .box-n{font-family:var(--f-disp);font-size:1.6rem;color:rgba(255,255,255,0.15);display:block;margin-bottom:10px;}
+    .box h3{font-family:var(--f-disp);font-size:1.05rem;text-transform:uppercase;margin-bottom:8px;}
+    .box p{font-size:0.84rem;color:var(--muted);line-height:1.6;}
+    .slider{position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;background:#161616;}
+    .slides{display:flex;width:100%;height:100%;transition:transform 0.4s ease;}
+    .slides img{min-width:100%;height:100%;object-fit:cover;}
+    .s-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(9,9,9,0.8);border:1px solid var(--border);color:#fff;width:28px;height:28px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+    .s-btn.prev{left:6px;} .s-btn.next{right:6px;}
+    .s-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:4px;}
+    .s-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.3);}
+    .s-dot.active{background:#fff;width:12px;border-radius:3px;}
+    .badge-s{position:absolute;top:10px;left:10px;background:rgba(9,9,9,0.9);border:1px solid var(--border);font-size:0.62rem;text-transform:uppercase;padding:3px 8px;z-index:2;}
+    .card-body{padding:20px;background:var(--card);border:1px solid var(--border);border-top:none;display:flex;flex-direction:column;gap:8px;}
+    .card-body h3{font-family:var(--f-disp);font-size:1.05rem;text-transform:uppercase;}
+    .card-body p{font-size:0.82rem;color:var(--muted);line-height:1.5;}
+    .card-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.06);padding-top:12px;margin-top:6px;}
+    .price{font-family:var(--f-disp);font-weight:700;}
+    .card-foot a{font-size:0.7rem;text-transform:uppercase;font-weight:600;border-bottom:1px solid var(--border);cursor:pointer;}
+    .f-bar{display:flex;gap:8px;margin:25px 0 35px;flex-wrap:wrap;}
+    .f-btn{background:transparent;border:1px solid var(--border);color:var(--muted);padding:6px 14px;font-size:0.68rem;text-transform:uppercase;cursor:pointer;}
+    .f-btn.active{background:var(--white);color:var(--bg);border-color:var(--white);}
+    .drawer-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);backdrop-filter:blur(6px);z-index:2000;opacity:0;visibility:hidden;transition:0.3s;}
+    .drawer-overlay.active{opacity:1;visibility:visible;}
+    .drawer{position:fixed;top:0;right:0;width:100%;max-width:400px;height:100%;background:#111;border-left:1px solid var(--border);padding:30px 20px;z-index:2001;transform:translateX(100%);transition:0.35s ease;overflow-y:auto;}
+    .drawer-overlay.active .drawer{transform:translateX(0);}
+    .form-group{margin-bottom:15px;}
+    .form-group label{display:block;font-size:0.68rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+    .form-group input,.form-group select{width:100%;background:#181818;border:1px solid var(--border);color:#fff;padding:10px;font-size:0.85rem;outline:none;}
+    footer{background:#050505;padding:60px 0 25px;border-top:1px solid var(--border);}
+    @media(max-width:880px){.hero-grid{grid-template-columns:1fr;}.grid-3{grid-template-columns:1fr;}.nav-links{display:none;}}
+  </style>
+</head>
+<body>
+
+  <div class="mode-wrap">
+    <button class="mode-btn" onclick="toggleGenZMode()">
+      <span id="modeIcon">⚡</span>
+      <span id="modeLabel">Switch to Gen-Z Mode</span>
+    </button>
+  </div>
+
+  <div id="pageWrapper">
+    <header>
+      <div class="container nav-in">
+        <a href="#" class="brand">TOOYNG</a>
+        <nav class="nav-links">
+          <a href="#manifesto" data-gz="The Lore">Manifesto</a>
+          <a href="#process" data-gz="The Cook-Up">Craft</a>
+          <a href="#studio" data-gz="The Lab">In The Studio</a>
+          <a href="#shop" data-gz="The Vault">The Creations</a>
+          <a href="#founders" data-gz="Architects">Founders</a>
+          <a href="#visit" data-gz="Sanctuary">Flagship</a>
+        </nav>
+        <button class="btn btn-o" onclick="openDrawer('Bespoke Inquiry')" data-gz="Cop 1-of-1">Bespoke Inquiry</button>
+      </div>
+    </header>
+
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="tag" data-gz="Surat, India • Straight Drip, Zero Cap">Surat, India • Handcrafted Designer Label</div>
+          <h1 class="title">TOOYNG <span style="display:block;font-family:var(--f-ser);font-style:italic;" data-gz="Pure Drip That Resets Your Aura ⚡">Transformative Wearable Art</span></h1>
+          <p class="desc" style="font-size:1rem;margin-bottom:28px;" data-gz="Fast fashion NPCs could never. We turn raw fabrics into generational 1-of-1 wearable art—hand-painted by artists. If you ain't tryna look generic, tap in.">
+            Every garment is treated as an individual canvas—hand-cut, hand-tailored, and hand-painted for those who refuse fast fashion monotony.
+          </p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a href="#shop" class="btn btn-w" data-gz="Enter The Vault 🔥">Explore Creations</a>
+            <a href="#process" class="btn btn-o" data-gz="Watch Cook-Up">Atelier Process</a>
+          </div>
+          <div class="badges">
+            <div><h4>100%</h4><p data-gz="Made 4 You Only">Made To Order</p></div>
+            <div><h4>Zero</h4><p data-gz="NPC Factory Slop">Mass Production</p></div>
+            <div><h4>1-of-1</h4><p data-gz="Holy Grail Art">Original Art</p></div>
+          </div>
+        </div>
+        <div class="h-card">
+          <div class="h-img">
+            <img src="images/SaveInta.com_800715042_18126733558777366_902083303958726911_n.jpg" alt="TOOYNG" onerror="this.src='https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800';" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="manifesto">
+      <div class="container" style="text-align:center;">
+        <span class="tag" style="justify-content:center;" data-gz="Anti-NPC Manifesto">Label Manifesto</span>
+        <h2 class="title" data-gz="Not Streetwear. We Don't Do Mass Production, Fr.">Not Streetwear. Not Mass Production.</h2>
+        <p class="desc" style="margin:0 auto 30px;" data-gz='"The game is rigged: either cheap fast fashion slop or soulless logo flex. TOOYNG is the ultimate glitch in the matrix—actual hand-painted designer heat."'>
+          "The modern world presents two extremes: disposable fast fashion or detached luxury. TOOYNG lives in the authentic bridge between both—handcrafted designer art."
+        </p>
+        <div class="grid-3" style="text-align:left;">
+          <div class="box"><span class="box-n">01</span><h3 data-gz="Wearable Canvas, No Blanks">Canvas Philosophy</h3><p data-gz="We don't print on cheap polyester blanks. We treat raw fabrics like gallery canvases and paint with zero overthinking.">No printed blanks. Every piece starts with raw textile, sculpted and painted with instinctive brush-work.</p></div>
+          <div class="box"><span class="box-n">02</span><h3 data-gz="The Aura Multiplier">Transformation</h3><p data-gz="Put on a piece that took hours of hand-brushing and tell me your confidence doesn't peak. Main character energy only.">A garment crafted purely by human hands shifts how you carry yourself. Our wearers never blend into crowds.</p></div>
+          <div class="box"><span class="box-n">03</span><h3 data-gz="Zero Waste, All Real">Zero Waste</h3><p data-gz="Deadstock sitting in warehouses? Massive L. We craft piece-by-piece only when you order. Pure sustainable craft.">No warehouse deadstock. Every stitch and brushstroke exists solely because a client commissioned it.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <span class="tag" data-gz="Studio Routine">Artisanal Method</span>
+        <h2 class="title" data-gz="How We Cook Your Piece">The Made-To-Order Journey</h2>
+        <div class="grid-3" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
+          <div class="box"><span class="box-n">01</span><h3 data-gz="Phase 1: The Blueprint">Design & Form</h3><p data-gz="Dialed-in aesthetic silhouettes built for effortless movement.">Structural silhouette balance built for natural body movement.</p></div>
+          <div class="box"><span class="box-n">02</span><h3 data-gz="Phase 2: Cut & Stitch">Cut & Stitch</h3><p data-gz="Master tailoring in Surat. Heavy raw denim and textured linen cut panel by panel.">Artisanal tailoring. Premium heavyweight cottons and linens cut by hand.</p></div>
+          <div class="box"><span class="box-n">03</span><h3 data-gz="Phase 3: Painting Heat">Hand-Paint Canvas</h3><p data-gz="Direct pigment application. Picasso-style continuous line art that turns heads.">Individual pigment and textile acrylic applied directly onto the garment weave.</p></div>
+          <div class="box"><span class="box-n">04</span><h3 data-gz="Phase 4: Doorstep Drop">Deliver</h3><p data-gz="Cured, authenticated, and boxed for the culture. Delivered straight to you.">Cured, authenticated, and delivered directly to the client as a 1-of-1 piece.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="studio">
+      <div class="container">
+        <span class="tag" data-gz="Behind The Scenes">Behind The Craft</span>
+        <h2 class="title" data-gz="Inside The Lab">In The Studio</h2>
+        <div class="grid-3">
+          <div class="box" style="padding:0;overflow:hidden;"><img src="images/SaveInta.com_800715042_18126733558777366_902083303958726911_n.jpg" onerror="this.src='https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=600';"/><div style="padding:15px;"><h4 data-gz="The Final Masterpiece">The Finished Canvas</h4><p data-gz="Hand-painted wearable statement caught in natural light">Hand-painted wearable statement</p></div></div>
+          <div class="box" style="padding:0;overflow:hidden;"><img src="images/SaveInta.com_800603551_18126733567777366_4981473501512892217_n.jpg" onerror="this.src='https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?q=80&w=600';"/><div style="padding:15px;"><h4 data-gz="Custom Painted Denim">Hand-Painted Denim</h4><p data-gz="Textile pigments cured on raw Japanese weave">Pigments cured on raw weave</p></div></div>
+          <div class="box" style="padding:0;overflow:hidden;"><img src="images/SaveInta.com_698324810_18107825149777366_6743558860781962725_n.jpg" onerror="this.src='https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=600';"/><div style="padding:15px;"><h4 data-gz="Bespoke Drape Testing">Atelier Construction</h4><p data-gz="Precision cuts and drape testing in studio">Precision master cut & drape</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="shop">
+      <div class="container">
+        <span class="tag" data-gz="The Drip Catalog">Bespoke Catalog</span>
+        <h2 class="title" data-gz="The Holy Grails">The Creations</h2>
+        <div class="f-bar">
+          <button class="f-btn active" onclick="filterShop('all',this)" data-gz="All Drops">All Creations</button>
+          <button class="f-btn" onclick="filterShop('denim',this)" data-gz="Denim Grails">Denim Jeans</button>
+          <button class="f-btn" onclick="filterShop('dresses',this)" data-gz="Couture Dresses">Dresses</button>
+          <button class="f-btn" onclick="filterShop('jackets',this)" data-gz="Outerwear Heat">Jackets</button>
+        </div>
+
+        <div class="grid-3">
+          <div class="card" data-cat="denim">
+            <div class="slider" id="sl-1">
+              <span class="badge-s">● Live & Orderable</span>
+              <div class="slides">
+                <img src="images/SaveInta.com_800603551_18126733567777366_4981473501512892217_n.jpg" onerror="this.src='https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=600';"/>
+                <img src="images/SaveInta.com_800715042_18126733558777366_902083303958726911_n.jpg" onerror="this.src='https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=600';"/>
+              </div>
+              <button class="s-btn prev" onclick="moveSlide('sl-1',-1)">‹</button>
+              <button class="s-btn next" onclick="moveSlide('sl-1',1)">›</button>
+              <div class="s-dots"><span class="s-dot active"></span><span class="s-dot"></span></div>
+            </div>
+            <div class="card-body">
+              <h3 data-gz="Picasso Line-Art Signature Denim">Hand-Painted Signature Denim</h3>
+              <p data-gz="Heavyweight raw denim hit with freehand abstract line-art. Heat-cured directly into weave.">Artisanal heavyweight denim featuring original freehand continuous contour art.</p>
+              <div class="card-foot"><span class="price">₹2,500 – ₹3,000</span><a onclick="openDrawer('Signature Denim')" data-gz="Lock In Fit →">Order Bespoke →</a></div>
+            </div>
+          </div>
+
+          <div class="card" data-cat="dresses">
+            <div class="slider" id="sl-2">
+              <span class="badge-s" style="color:var(--lavender);">Launching Soon</span>
+              <div class="slides">
+                <img src="images/SaveInta.com_800715042_18126733558777366_902083303958726911_n.jpg" onerror="this.src='https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=600';"/>
+                <img src="images/SaveInta.com_698324810_18107825149777366_6743558860781962725_n.jpg" onerror="this.src='https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600';"/>
+              </div>
+              <button class="s-btn prev" onclick="moveSlide('sl-2',-1)">‹</button>
+              <button class="s-btn next" onclick="moveSlide('sl-2',1)">›</button>
+              <div class="s-dots"><span class="s-dot active"></span><span class="s-dot"></span></div>
+            </div>
+            <div class="card-body">
+              <h3 data-gz="Sculptural Contour Dress">Sculptural Line-Art Dress</h3>
+              <p data-gz="Clean architectural drape transformed with continuous facial line along the silhouette.">Architectural drape in textured fabric transformed with continuous facial lines.</p>
+              <div class="card-foot"><span class="price">₹4,000 – ₹6,000</span><a onclick="openDrawer('Line-Art Dress')" data-gz="Pre-Order →">Pre-Order →</a></div>
+            </div>
+          </div>
+
+          <div class="card" data-cat="jackets">
+            <div class="slider" id="sl-3">
+              <span class="badge-s" style="color:var(--lavender);">Launching Soon</span>
+              <div class="slides">
+                <img src="images/SaveInta.com_698324810_18107825149777366_6743558860781962725_n.jpg" onerror="this.src='https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=600';"/>
+                <img src="images/SaveInta.com_800603551_18126733567777366_4981473501512892217_n.jpg" onerror="this.src='https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=600';"/>
+              </div>
+              <button class="s-btn prev" onclick="moveSlide('sl-3',-1)">‹</button>
+              <button class="s-btn next" onclick="moveSlide('sl-3',1)">›</button>
+              <div class="s-dots"><span class="s-dot active"></span><span class="s-dot"></span></div>
+            </div>
+            <div class="card-body">
+   
